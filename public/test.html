@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vocarbit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a href="/home" class="logo">The Vocarbit</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="about.html" class="a-link">About us</a>
+                <a href="methodology.html" class="a-link">Methodology</a>
+                <a href="/test" class="nav-btn">Start testing now</a>
+            </div>
+        </nav>
+
+        <main class="content-area" id="mainContentArea">
+            <div class="quiz-header" id="quizHeader">
+                <a href="/home" class="home-btn left-home-btn">&larr;&nbsp;Home</a>
+                
+                <div class="pagination-wrapper">
+                    <div class="pagination" id="pagination"></div>
+                    <button class="nav-action-btn" id="nextBtn">Next &nbsp;&rarr;</button>
+                </div>
+            </div>
+
+            <div class="quiz-body" id="quizBody">
+                <div class="question-box" id="questionText">
+                </div>
+
+                <div class="answers-grid" id="answersGrid">
+                    <div class="answer-card"></div>
+                    <div class="answer-card"></div>
+                    <div class="answer-card"></div>
+                    <div class="answer-card"></div>
+                    <div class="answer-card"></div>
+                    <div class="answer-card"></div>
+                </div>
+            </div>
+            <div class="bottom-controls" id="bottomControls"></div>
+        </main>
+    </div>
+
+    <script src="test.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

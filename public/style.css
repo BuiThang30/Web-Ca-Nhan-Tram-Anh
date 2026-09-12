@@ -1,0 +1,330 @@
+/* =========================================
+   1. FONTS & RESET CƠ BẢN
+========================================= */
+@font-face {
+    font-family: 'SVN-Million Dreams';
+    src: url('font/SVN-Million-Dreams.otf') format('opentype'); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #1a1a1a; 
+}
+
+/* =========================================
+   2. LAYOUT CHÍNH
+========================================= */
+.wrapper {
+    width: 1440px; 
+    margin: 0 auto; 
+    min-height: 100vh;
+    background-image: url('image/background.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    overflow-x: hidden; 
+    padding-top: 75px; 
+}
+
+/* =========================================
+   3. NAV BAR
+========================================= */
+.navbar {
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.30) 0%, #255D80 100%);
+    display: flex;
+    width: 1440px; 
+    height: 74.844px;
+    padding: 18px 52.5px 11.25px 52.5px;
+    justify-content: space-between; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; 
+    align-items: center;
+}
+
+.logo {
+    color: #F9BDB3;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 22.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none; 
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    color: #FDE8B1; 
+    transform: scale(1.1); 
+    text-shadow: 0 0 10px rgba(253, 232, 177, 0.5); 
+}
+
+.a-link {
+    color: #F9BDB3;
+    text-align: center;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    display: inline-block; 
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; 
+}
+
+.a-link:hover {
+    color: #FDE8B1; 
+    transform: scale(1.1); 
+    text-shadow: 0 0 10px rgba(253, 232, 177, 0.5); 
+}
+
+/* STYLE CHO NÚT HAMBURGER (ẨN TRÊN MÁY TÍNH) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #F9BDB3;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng biến thành dấu X khi bấm vào nút (Tùy chọn) */
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.hero-text {
+    color: #FDE8B1;
+    text-align: center;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 105px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 82.5px; 
+    margin-bottom: 60px;
+}
+
+.hero-text img {
+    vertical-align: middle;
+}
+
+.voso {
+    width: 98.044px;
+    height: 76.677px;
+    aspect-ratio: 78/61;
+    margin: 0 10px;
+}
+
+.contrai {
+    width: 74.896px;
+    height: 80.691px;
+    aspect-ratio: 74.90/80.69;
+    margin: 0 -5px; 
+}
+
+.ngoctrai {
+    width: 73.501px;
+    height: 75.589px;
+    aspect-ratio: 73.50/75.59;
+    margin: 0 -2px; 
+}
+
+.btn-start {
+    display: inline-block; 
+    text-decoration: none; 
+    color: #255D80;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    background-color: #FDE8B1; 
+    border: none;
+    border-radius: 8px;
+    padding: 10px 40px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-start:hover {
+    transform: scale(1.05);
+    background-color: #ffeebf;
+}
+
+/* =========================================
+   5. RESPONSIVE (MEDIA QUERIES)
+========================================= */
+
+/* ----- Màn hình < 1440px ----- */
+@media screen and (max-width: 1439px) {
+    .wrapper, .navbar {
+        width: 100%;
+    }
+    
+    .navbar {
+        padding: 15px 30px;
+    }
+}
+
+/* ----- Màn hình < 1200px ----- */
+@media screen and (max-width: 1199px) {
+    .hero-text {
+        font-size: 85px;
+        line-height: 1.1;
+    }
+    
+    .voso { width: 80px; height: auto; }
+    .contrai { width: 60px; height: auto; }
+    .ngoctrai { width: 60px; height: auto; }
+    
+    .btn-start {
+        font-size: 26px;
+    }
+}
+
+/* ----- Màn hình < 1024px (Tablet ngang) ----- */
+@media screen and (max-width: 1023px) {
+    .hero-text {
+        font-size: 65px;
+    }
+    
+    .voso { width: 65px; }
+    .contrai { width: 50px; }
+    .ngoctrai { width: 50px; }
+    
+    .btn-start {
+        font-size: 22px;
+        padding: 10px 30px;
+    }
+}
+
+/* ----- Màn hình < 768px (Tablet dọc & Mobile to) ----- */
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding-top: 100px; 
+    }
+    
+    .navbar {
+        padding: 15px 25px;
+    }
+    
+    /* Hiện nút menu hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Thiết lập menu trượt xuống cho Mobile */
+    .nav-links {
+        position: absolute;
+        top: 74.844px;
+        left: -100%;
+        width: 100%;
+        background: linear-gradient(180deg, #255D80 0%, #1a4a6b 100%);
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+        gap: 20px;
+    }
+    
+    /* Khi JS thêm class active thì menu trượt ra màn hình */
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .hero-text {
+        font-size: 45px;
+        line-height: 1.2;
+        margin-bottom: 40px;
+    }
+    
+    .voso { width: 45px; margin: 0 5px; }
+    .contrai { width: 35px; margin: 0 -2px; }
+    .ngoctrai { width: 35px; margin: 0 -1px; }
+    
+    .btn-start {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+}
+
+/* ----- Màn hình < 480px (Mobile nhỏ) ----- */
+@media screen and (max-width: 479px) {
+    .wrapper {
+        padding-top: 90px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .a-link {
+        font-size: 16px;
+    }
+    
+    .hero-text {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .voso { width: 30px; }
+    .contrai { width: 22px; }
+    .ngoctrai { width: 22px; }
+    
+    .btn-start {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+}

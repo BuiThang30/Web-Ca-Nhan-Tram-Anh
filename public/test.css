@@ -1,0 +1,724 @@
+/* =========================================
+   1. FONTS & RESET CƠ BẢN
+========================================= */
+@font-face {
+    font-family: 'SVN-Million Dreams';
+    src: url('font/SVN-Million-Dreams.otf') format('opentype'); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #1a1a1a; 
+}
+
+/* =========================================
+   2. LAYOUT CHÍNH (WRAPPER)
+========================================= */
+.wrapper {
+    width: 1440px; 
+    margin: 0 auto; 
+    min-height: 100vh;
+    background-image: url('image/background-1.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    overflow-x: hidden; 
+    padding-top: 100px; 
+}
+
+/* =========================================
+   3. THANH ĐIỀU HƯỚNG (NAVBAR)
+========================================= */
+.navbar {
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.30) 0%, #255D80 100%);
+    display: flex;
+    width: 1440px; 
+    height: 74.844px;
+    padding: 18px 52.5px 11.25px 52.5px;
+    justify-content: space-between; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; 
+    align-items: center;
+}
+
+.logo {
+    color: #F9BDB3;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 22.5px;
+    font-weight: 400;
+    text-decoration: none; 
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.a-link {
+    color: #F9BDB3;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.a-link:hover {
+    color: #FDE8B1; 
+    transform: scale(1.1); 
+}
+
+.nav-btn {
+    color: #255D80;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #FDE8B1;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+/* STYLE CHO MENU HAMBURGER (ẨN TRÊN MÁY TÍNH) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #F9BDB3;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   4. KHU VỰC NỘI DUNG CHÍNH (CONTENT AREA)
+========================================= */
+.content-area {
+    width: 100%;
+    max-width: 1150px; 
+    margin: 0 auto;
+    padding: 20px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quiz-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-home-btn {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-btn {
+    color: #255D80;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #FDE8B1;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.home-btn:hover {
+    transform: translateY(-50%) scale(1.05); 
+}
+
+/* =========================================
+   5. PHÂN TRANG (PAGINATION)
+========================================= */
+.pagination-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagination {
+    display: flex;
+    gap: 12px;
+}
+
+.page-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #A0D8DF; 
+    color: #255D80;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.page-dot.active {
+    background-color: #FDE8B1; 
+}
+
+/* =========================================
+   6. CÁC NÚT ĐIỀU KHIỂN (NEXT / FINISH)
+========================================= */
+.nav-action-btn {
+    color: #255D80;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #FDE8B1;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-action-btn:hover {
+    transform: scale(1.05);
+}
+
+.finish-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.finish-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 8px 30px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.finish-btn.disabled {
+    background-color: #557080;
+    color: #a0b8c8;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.finish-btn.active-finish {
+    background-color: #FDE8B1;
+    color: #255D80;
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.finish-btn.active-finish:hover {
+    transform: scale(1.05);
+}
+
+.bottom-controls {
+    display: none; 
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 10px;
+}
+
+/* =========================================
+   7. KHUNG CÂU HỎI & ĐÁP ÁN (QUIZ BODY)
+========================================= */
+.quiz-body {
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: opacity 0.3s ease; 
+}
+
+.question-box {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.50) 0%, #255D80 100%);
+    padding: 30px 40px;
+    width: 100%;
+    text-align: center;
+    color: #FDE8B1;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.answer-card {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.40) 0%, #255D80 100%);
+    padding: 25px 30px;
+    color: #FDE8B1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, opacity 0.2s;
+}
+
+.answer-card:hover:not(.disabled-card):not(.active) {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.60) 0%, #2e719b 100%);
+}
+
+.answer-card.active, 
+.answer-card.active:hover {
+    background: linear-gradient(180deg, rgba(76, 194, 205, 0.6) 0%, #3e8894 100%);
+}
+
+.answer-card:active:not(.disabled-card) {
+    transform: translateY(-1px);
+}
+
+.answer-card.disabled-card {
+    opacity: 0.3;
+    pointer-events: none;
+    filter: grayscale(100%);
+    background: rgba(100, 100, 100, 0.4);
+}
+
+/* =========================================
+   8. GIAO DIỆN BẢNG KẾT QUẢ (HOLLAND CODE)
+========================================= */
+.result-wrapper {
+    background: linear-gradient(0deg, rgba(37, 93, 128, 0.24) 0%, rgba(37, 93, 128, 0.80) 100%), rgba(249, 189, 179, 0.20);
+    border-radius: 7.5px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #FDE8B1;
+}
+
+.result-title-main {
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 45px;
+    text-align: center;
+    color: #F9BDB3;
+    margin-bottom: 30px;
+}
+
+.result-grid-header {
+    display: grid;
+    grid-template-columns: 0.8fr 2.5fr 2fr 1.5fr 2fr 1.5fr;
+    gap: 15px;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #FDE8B1;
+}
+
+.result-grid-body {
+    display: grid;
+    grid-template-columns: 0.8fr 2.5fr 2fr 1.5fr 2fr 1.5fr;
+    gap: 15px;
+}
+
+.res-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.res-box {
+    background: linear-gradient(180deg, #F9BDB3 0%, rgba(249, 189, 179, 0.60) 100%);
+    color: #794d4d;
+    border-radius: 7.5px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.res-box-bold {
+    font-weight: 700;
+    color: #5d3a3a;
+}
+
+.res-code-box {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(180deg, #F9BDB3 0%, rgba(249, 189, 179, 0.60) 100%);
+    color: #5d3a3a;
+    border-radius: 7.5px;
+}
+
+.res-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* =========================================
+   9. GIAO DIỆN MINI JOB PROBATION
+========================================= */
+.mini-job-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.mj-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.mj-header-row .home-btn {
+    position: absolute;
+    left: -180px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+.mj-title-pill {
+    background-color: rgba(249, 189, 179, 0.35);
+    color: #FDE8B1;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 32px;
+    padding: 10px 50px;
+    border-radius: 50px;
+    text-align: center;
+    margin: 0;
+}
+
+.mj-situation {
+    color: #FDE8B1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.mj-prompt-pill {
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.8) 0%, #255D80 100%);
+    color: #FDE8B1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mj-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.mj-answer-card {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.6) 0%, #255D80 100%);
+    padding: 18px 25px;
+    color: #FDE8B1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.mj-answer-card:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.85) 0%, #2e719b 100%);
+}
+
+.mj-result-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.mj-success {
+    background-color: rgba(220, 240, 250, 0.65);
+    color: #1a4a6b;
+}
+
+.mj-fail {
+    background-color: rgba(249, 189, 179, 0.65);
+    color: #1a4a6b;
+}
+
+/* =========================================
+   10. RESPONSIVE (MEDIA QUERIES)
+========================================= */
+
+/* ----- Màn hình < 1440px ----- */
+@media screen and (max-width: 1439px) {
+    .wrapper, .navbar {
+        width: 100%;
+    }
+    
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .left-home-btn {
+        left: 20px;
+    }
+
+    .mj-header-row .home-btn {
+        left: 20px;
+    }
+}
+
+/* ----- Màn hình < 1200px ----- */
+@media screen and (max-width: 1199px) {
+    .content-area, .result-wrapper, .mini-job-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .result-wrapper {
+        overflow-x: auto;
+    }
+
+    .result-grid-header, .result-grid-body {
+        min-width: 900px; 
+    }
+}
+
+/* ----- Màn hình < 1024px (Tablet ngang) ----- */
+@media screen and (max-width: 1023px) {
+    .quiz-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-home-btn {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        align-self: flex-start;
+    }
+
+    .home-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .mj-header-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mj-header-row .home-btn {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        align-self: flex-start;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+/* ----- Màn hình < 768px (Tablet dọc & Mobile to) ----- */
+@media screen and (max-width: 767px) {
+    /* Navbar & Menu trượt */
+    .navbar {
+        padding: 15px 25px; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 74px; 
+        left: -100%; 
+        width: 100%;
+        background: linear-gradient(180deg, #255D80 0%, #1a4a6b 100%);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Ép HOME và NEXT thẳng hàng ngang tuyệt đối */
+    .quiz-header {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important; 
+        width: 100%;
+    }
+
+    .left-home-btn {
+        position: relative !important; 
+        left: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+        margin: 0 !important;
+        display: inline-flex;
+        align-items: center;
+        height: 35px; 
+    }
+
+    .nav-action-btn {
+        margin: 0 !important;
+        display: inline-flex;
+        align-items: center;
+        height: 35px; 
+    }
+
+    .pagination-wrapper {
+        width: auto !important;
+        margin: 0 !important;
+        justify-content: flex-end; 
+    }
+
+    /* Ẩn triệt để dấu chấm bằng important */
+    .pagination {
+        display: none !important; 
+    }
+
+    /* Các thành phần giao diện khác */
+    .answers-grid { grid-template-columns: 1fr; }
+    .question-box { font-size: 22px; padding: 20px 25px; }
+    .result-title-main { font-size: 35px; }
+    .mj-title-pill { font-size: 24px; padding: 8px 30px; }
+    .mj-result-box { font-size: 20px; padding: 25px; margin: 30px auto; }
+    .mj-prompt-pill { font-size: 14px; }
+    .answer-card, .mj-answer-card { padding: 15px 20px; }
+}
+
+/* ----- Màn hình < 480px (Mobile nhỏ) ----- */
+@media screen and (max-width: 479px) {
+    .wrapper {
+        padding-top: 100px;
+    }
+
+    .navbar {
+        flex-direction: row; 
+        height: 74.844px;
+        gap: 0;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .question-box {
+        font-size: 18px;
+    }
+
+    .answer-card, .mj-answer-card {
+        font-size: 13px;
+    }
+
+    .result-title-main {
+        font-size: 28px;
+    }
+
+    .finish-btn {
+        width: 100%; 
+    }
+
+    .mj-situation {
+        font-size: 14px;
+    }
+}

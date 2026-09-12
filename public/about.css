@@ -1,0 +1,390 @@
+/* =========================================
+   1. FONTS & RESET CƠ BẢN
+========================================= */
+@font-face {
+    font-family: 'SVN-Million Dreams';
+    src: url('font/SVN-Million-Dreams.otf') format('opentype'); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #1a1a1a; 
+}
+
+/* =========================================
+   2. LAYOUT CHÍNH
+========================================= */
+.wrapper {
+    width: 1440px; 
+    margin: 0 auto; 
+    min-height: 100vh;
+    background-image: url('image/background-1.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    overflow-x: hidden; 
+    padding-top: 75px; 
+}
+
+/* =========================================
+   3. NAV BAR & MENU HAMBURGER
+========================================= */
+.navbar {
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.30) 0%, #255D80 100%);
+    display: flex;
+    width: 1440px; 
+    height: 74.844px;
+    padding: 18px 52.5px 11.25px 52.5px;
+    justify-content: space-between; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; 
+    align-items: center;
+}
+
+.logo {
+    color: #F9BDB3;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 22.5px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none; 
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.a-link {
+    color: #F9BDB3;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.a-link:hover {
+    color: #FDE8B1; 
+    transform: scale(1.1); 
+}
+
+.nav-active {
+    color: #76C3CA;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 18px;
+    border-radius: 20px;
+}
+
+.nav-active:hover {
+    color: #FDE8B1;
+    transform: scale(1.05);
+}
+
+.nav-btn {
+    color: #255D80;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #FDE8B1;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+/* STYLE CHO NÚT HAMBURGER (ẨN TRÊN MÁY TÍNH) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #F9BDB3;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   4. BỐ CỤC NỘI DUNG
+========================================= */
+.content-area {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 20px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- NÚT HOME --- */
+.top-controls {
+    width: 100%;
+    margin-bottom: -25px;
+}
+
+.home-btn {
+    color: #255D80;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #FDE8B1;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s;
+    position: relative;
+    top: 20px;
+    left: -200px;
+}
+
+.home-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- HÀNG 1 --- */
+.row-1 {
+    width: 100%; 
+    position: relative;
+}
+
+/* --- HÀNG 2 --- */
+.row-2 {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.publisher-wrapper {
+    flex: 0 0 159px;
+    border-radius: 79.5px;
+    overflow: hidden;
+}
+
+.publisher-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.8);
+    transform-origin: 100% 90%;
+}
+
+/* --- KHUNG CHỮ --- */
+.info-card {
+    border-radius: 7.5px;
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.30) 0%, #255D80 100%);
+    padding: 25px 50px;
+    width: 100%;
+    position: relative;
+}
+
+.card-title {
+    color: #FDE8B1;
+    text-align: center;
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #FDE8B1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* --- ẢNH TRANG TRÍ --- */
+.decor-img {
+    position: absolute;
+    z-index: 10;
+}
+
+.img-hoa {
+    width: 150px;
+    height: auto;
+    top: -48px;
+    left: -49px; 
+}
+
+.img-votrai {
+    width: 116.647px;
+    height: auto;
+    transform: rotate(-176.775deg);
+    top: -55px;
+    right: -55px;
+}
+
+/* =========================================
+   5. RESPONSIVE (MEDIA QUERIES)
+========================================= */
+
+/* ----- Màn hình < 1440px ----- */
+@media screen and (max-width: 1439px) {
+    .wrapper, .navbar {
+        width: 100%;
+    }
+    
+    .navbar {
+        padding: 15px 30px;
+    }
+}
+
+/* ----- Màn hình < 1200px ----- */
+@media screen and (max-width: 1199px) {
+    .content-area {
+        max-width: 90%;
+    }
+
+    .home-btn {
+        left: 0; /* Đưa nút Home về vị trí an toàn không bị tràn màn hình */
+    }
+}
+
+/* ----- Màn hình < 1024px (Tablet ngang) ----- */
+@media screen and (max-width: 1023px) {
+    .row-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .publisher-wrapper {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+    }
+}
+
+/* ----- Màn hình < 768px (Tablet dọc & Mobile to) ----- */
+@media screen and (max-width: 767px) {
+    .navbar {
+        padding: 15px 25px; 
+    }
+
+    .menu-toggle {
+        display: flex; /* Hiện nút 3 gạch */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 74.844px; 
+        left: -100%; 
+        width: 100%;
+        background: linear-gradient(180deg, #255D80 0%, #1a4a6b 100%);
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .content-area {
+        padding-top: 30px;
+    }
+
+    .home-btn {
+        top: 0;
+        margin-bottom: 15px;
+    }
+
+    .info-card {
+        padding: 20px 25px;
+    }
+
+    /* Thu nhỏ các hình ảnh trang trí để không bị tràn trên màn hình nhỏ */
+    .img-hoa {
+        width: 80px;
+        top: -25px;
+        left: -20px;
+    }
+
+    .img-votrai {
+        width: 65px;
+        top: -30px;
+        right: -20px;
+    }
+
+    .card-title {
+        font-size: 24px;
+    }
+}
+
+/* ----- Màn hình < 480px (Mobile nhỏ) ----- */
+@media screen and (max-width: 479px) {
+    .navbar {
+        flex-direction: row; 
+        height: 74.844px;
+        gap: 0;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .info-card {
+        padding: 15px 18px;
+    }
+
+    .card-text {
+        font-size: 12.5px;
+    }
+
+    .publisher-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+}

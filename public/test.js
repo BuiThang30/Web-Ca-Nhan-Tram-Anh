@@ -6,7 +6,7 @@ const answerLabels = ['R', 'I', 'A', 'S', 'E', 'C'];
 
 const pack = (f, t, e, c, su, m, sk, p) => ({fields: f, tools: t, environment: e, careers: c, subjects: su, major: m, skills: sk, planB: p});
 
-// DATABASE 120 TỔ HỢP 3 CHỮ CÁI (Đã chuẩn hóa chữ cái thứ 2 không viết hoa trong 1 cụm từ)
+// DATABASE 120 TỔ HỢP 3 CHỮ CÁI
 const resultsDatabase = {
     "RIA": pack("Physical trades, Engineering & mechanics", "Analytical models, software & diagnostic testing", "Design studios, agencies & flexible creative spaces", "Automotive design engineer, Robotics hardware researcher, Biomedical equipment specialist", "Math, Physics, Art/design", "Mech engineering, Industrial design", "CAD, spatial reasoning, hardware prototyping", "Product tester, Technical illustrator"),
     "RIC": pack("Physical trades, Engineering & mechanics", "Analytical models, software & diagnostic testing", "Highly structured offices, predictable routines & strict compliance", "Quality control inspector, CNC programmer, Civil engineering draftsman", "Math, Physics, IT", "Civil engineering, Computer science", "CNC programming, QA testing, structural math", "QA auditor, Systems technician"),
@@ -28,7 +28,6 @@ const resultsDatabase = {
     "RSA": pack("Physical trades, Engineering & mechanics", "Empathy, active listening, coaching & emotional support", "Design studios, agencies & flexible creative spaces", "Special education shop teacher, Woodworking instructor, Custom stage craftsman", "Shop/vocational, PE, English", "Vocational education, Studio arts", "Workshop safety, pedagogy, metal/wood crafting", "Maker-space manager, Tech theater lead"),
     "RSC": pack("Physical trades, Engineering & mechanics", "Empathy, active listening, coaching & emotional support", "Highly structured offices, predictable routines & strict compliance", "Occupational health technician, Vocational rehabilitation aide, Physical safety educator", "Health/PE, IT, Math", "Occupational therapy assistant", "Safety instruction, equipment logging, first-aid", "Fitness tech support, Safety trainer"),
     "RSE": pack("Physical trades, Engineering & mechanics", "Empathy, active listening, coaching & emotional support", "Fast-paced corporate offices, competitive arenas & boardrooms", "Search and rescue coordinator, Fire captain, Wilderness expedition director", "PE, Earth science, Civics", "Emergency mgt, Forestry", "Wilderness navigation, crisis response, resource deployment", "Park ranger, Risk management consultant"),
-
     "IRA": pack("Science, tech, medicine & academia", "Tangible machinery, hand tools & physical building", "Design studios, agencies & flexible creative spaces", "Archaeologist, Materials scientist, Geological surveyor", "History, Earth sci, Physics", "Archaeology, Geology", "Field sampling, artifact cataloging, material analysis", "Environmental surveyor, GIS analyst"),
     "IRC": pack("Science, tech, medicine & academia", "Tangible machinery, hand tools & physical building", "Highly structured offices, predictable routines & strict compliance", "Environmental auditor, Geological technician, Field researcher", "Chemistry, Biology, Math", "Environmental sci, Quality control", "Lab testing, data logging, strict protocol adherence", "Water quality tech, Regulatory auditor"),
     "IRE": pack("Science, tech, medicine & academia", "Tangible machinery, hand tools & physical building", "Fast-paced corporate offices, competitive arenas & boardrooms", "Lab operations manager, Field research director, Lead archaeologist", "Chemistry, Business, Math", "Lab management, Biotech", "Grant budgeting, lab oversight, feasibility analysis", "Clinical trial lead, Science product manager"),
@@ -49,7 +48,6 @@ const resultsDatabase = {
     "ISA": pack("Science, tech, medicine & academia", "Empathy, active listening, coaching & emotional support", "Design studios, agencies & flexible creative spaces", "Clinical researcher, Curriculum developer, Educational psychologist", "Psychology, Math, English", "Cognitive psychology, EdTech", "Learning analytics, curriculum validation, cognitive testing", "Instructional designer, EdTech strategist"),
     "ISC": pack("Science, tech, medicine & academia", "Empathy, active listening, coaching & emotional support", "Highly structured offices, predictable routines & strict compliance", "Medical technologist, Diagnostics specialist, Public health analyst", "Chemistry, Biology, IT", "Medical technology, Clinical lab", "Assay operations, lab automation, pathology logging", "Diagnostic sales, Lab ops coordinator"),
     "ISE": pack("Science, tech, medicine & academia", "Empathy, active listening, coaching & emotional support", "Fast-paced corporate offices, competitive arenas & boardrooms", "Hospital administrator, Chief medical officer, Public health policy director", "Biology, Business, Economics", "Healthcare admin, Public health", "Systemic health analysis, resource allocation, medical governance", "Hospital admin, Health policy consultant"),
-
     "ARI": pack("Design, media, arts, writing & entertainment", "Tangible machinery, hand tools & physical building", "Labs, research hubs & independent tech spaces", "3D animator, Sound engineer, Special effects artist", "IT, Art, Physics", "Animation, Audio engineering", "VFX pipeline, sound synthesis, 3D asset modeling", "Game tester, VR environment builder"),
     "ARC": pack("Design, media, arts, writing & entertainment", "Tangible machinery, hand tools & physical building", "Highly structured offices, predictable routines & strict compliance", "Jeweler, Costume designer, Ceramics artist", "Art, Chemistry, History", "Fine arts, Museology", "Casting, artifact restoration, material precision", "Luxury goods appraiser, Craft manufacturer"),
     "ARE": pack("Design, media, arts, writing & entertainment", "Tangible machinery, hand tools & physical building", "Fast-paced corporate offices, competitive arenas & boardrooms", "Freelance videographer, Custom auto designer, Independent architect", "Art, Business, Media", "Cinematography, Architecture", "Spatial design, commercial video production, client pitching", "Real estate marketer, Corporate event producer"),
@@ -70,7 +68,6 @@ const resultsDatabase = {
     "ASI": pack("Design, media, arts, writing & entertainment", "Empathy, active listening, coaching & emotional support", "Labs, research hubs & independent tech spaces", "Sociological author, Specialized counselor, Humanities professor", "English, Psychology, Sociology", "Philosophy, Humanities", "Literary synthesis, qualitative research, cultural analysis", "Think-tank writer, Ethics consultant"),
     "ASC": pack("Design, media, arts, writing & entertainment", "Empathy, active listening, coaching & emotional support", "Highly structured offices, predictable routines & strict compliance", "Arts grant administrator, Choir director, Community arts organizer", "Art/music, Civics, Math", "Non-profit admin, Social work", "Grant writing, community organizing, event logistics", "Municipal arts coordinator, Foundation manager"),
     "ASE": pack("Design, media, arts, writing & entertainment", "Empathy, active listening, coaching & emotional support", "Fast-paced corporate offices, competitive arenas & boardrooms", "Talent agent, Arts non-profit director, Performing arts coach", "Drama, Business, Law", "Entertainment law, PR", "Talent scouting, contract negotiation, PR strategy", "HR recruiter, Artist relations rep"),
-
     "SRI": pack("Healthcare, education, counseling & social work", "Tangible machinery, hand tools & physical building", "Labs, research hubs & independent tech spaces", "Radiologic technologist, Dental hygienist, Physical therapy assistant", "Biology, PE, Math", "Radiography, Physical therapy", "Medical imaging, diagnostic assisting, patient handling", "Med-tech sales, Clinic ops coordinator"),
     "SRA": pack("Healthcare, education, counseling & social work", "Tangible machinery, hand tools & physical building", "Design studios, agencies & flexible creative spaces", "Yoga instructor, Physical education teacher, Wilderness therapy guide", "PE, Biology, Geography", "Outdoor recreation, Kinesiology", "Wilderness safety, fitness coaching, group facilitation", "Eco-tourism guide, Corporate wellness manager"),
     "SRC": pack("Healthcare, education, counseling & social work", "Tangible machinery, hand tools & physical building", "Highly structured offices, predictable routines & strict compliance", "Floor registered nurse, Paramedic, Surgical technologist", "Biology, Health, Math", "Nursing, Emergency medicine", "Triage assessment, surgical prep, clinical protocol", "Health QA auditor, Medical case manager"),
@@ -91,7 +88,6 @@ const resultsDatabase = {
     "SEI": pack("Healthcare, education, counseling & social work", "Persuasion, public speaking & strategic negotiation", "Labs, research hubs & independent tech spaces", "Policy analyst, Healthcare administrator, Social reform researcher", "Civics, Math, Psychology", "Public policy, Sociology", "Policy impact analysis, systemic reform, social program auditing", "Gov relations specialist, Social impact consultant"),
     "SEA": pack("Healthcare, education, counseling & social work", "Persuasion, public speaking & strategic negotiation", "Design studios, agencies & flexible creative spaces", "Life coach, Corporate trainer, Motivational speaker", "English, Speech, Business", "Communications, Exec coaching", "Leadership coaching, motivational speaking, speechwriting", "Change mgt consultant, Exec search recruiter"),
     "SEC": pack("Healthcare, education, counseling & social work", "Persuasion, public speaking & strategic negotiation", "Highly structured offices, predictable routines & strict compliance", "Social services director, Alumni relations manager, Community organizer", "Civics, Business, Math", "Social work admin, Public admin", "Donor relations, community program oversight, board reporting", "Philanthropy director, Alumni relations mgt"),
-
     "ERI": pack("Business, law, politics, sales & management", "Tangible machinery, hand tools & physical building", "Labs, research hubs & independent tech spaces", "Heavy machinery sales, Real estate developer, Technical sales representative", "Business, Math, Physics", "Real estate dev, Tech sales", "Commercial property sales, tech product pitching, site prospecting", "Industrial equipment broker, Procurement manager"),
     "ERA": pack("Business, law, politics, sales & management", "Tangible machinery, hand tools & physical building", "Design studios, agencies & flexible creative spaces", "Luxury contractor, Architecture firm partner, Real estate flipper", "Business, Art, Math", "Architecture, Construction mgt", "Property acquisition, high-end sales, aesthetic management", "Luxury real estate agent, Architectural sales"),
     "ERC": pack("Business, law, politics, sales & management", "Tangible machinery, hand tools & physical building", "Highly structured offices, predictable routines & strict compliance", "Supply chain director, Shipping manager, Construction manager", "Business, Math, IT", "Supply chain mgt, Logistics", "Freight ops, inventory cost control, logistics optimization", "3PL account lead, Supply chain risk consultant"),
@@ -112,7 +108,6 @@ const resultsDatabase = {
     "ESI": pack("Business, law, politics, sales & management", "Empathy, active listening, coaching & emotional support", "Labs, research hubs & independent tech spaces", "Head of talent acquisition, Labor relations director, Organizational psychologist", "Psychology, Business, English", "Talent acquisition, Org psych", "Exec headhunting, org design, compensation negotiation", "Exec search agency partner, HR transformation lead"),
     "ESA": pack("Business, law, politics, sales & management", "Empathy, active listening, coaching & emotional support", "Design studios, agencies & flexible creative spaces", "Corporate spokesperson, PR director, Communications chief", "Speech, English, Business", "PR, Corporate comms", "Exec spokesperson delivery, crisis messaging, media relations", "CCO track, Corporate reputation manager"),
     "ESC": pack("Business, law, politics, sales & management", "Empathy, active listening, coaching & emotional support", "Highly structured offices, predictable routines & strict compliance", "City manager, Government agency director, Public administrator", "Civics, Business, Math", "Public admin, Government", "Municipal governance, public budget allocation, urban ops oversight", "Urban dev consultant, Infrastructure program director"),
-
     "CRI": pack("Finance, administration, logistics & IT admin", "Tangible machinery, hand tools & physical building", "Labs, research hubs & independent tech spaces", "Building inspector, Hardware QA tester, Manufacturing auditor", "Physics, Math, Shop", "Quality assurance, Applied physics", "QA testing, inspection logging, building code verification", "Compliance lead, Product safety auditor"),
     "CRA": pack("Finance, administration, logistics & IT admin", "Tangible machinery, hand tools & physical building", "Design studios, agencies & flexible creative spaces", "Patternmaker, Professional organizer, Drafting technician", "Math, Art, IT", "Drafting tech, Interior layout", "CAD blueprinting, space planning, inventory documentation", "CAD admin, Technical design librarian"),
     "CRE": pack("Finance, administration, logistics & IT admin", "Tangible machinery, hand tools & physical building", "Fast-paced corporate offices, competitive arenas & boardrooms", "Inventory manager, Dispatcher, Fleet administrator", "Math, IT, Geography", "Logistics systems, Dispatch", "Automated inventory auditing, dispatch scheduling, fleet logging", "Systems integrator, Global freight ops"),
@@ -133,6 +128,132 @@ const resultsDatabase = {
     "CSI": pack("Finance, administration, logistics & IT admin", "Empathy, active listening, coaching & emotional support", "Labs, research hubs & independent tech spaces", "University registrar, Financial aid coordinator, Academic records specialist", "Math, Civics, English", "Higher ed admin, Admissions", "Transcript auditing, financial aid verification, academic archiving", "University registrar, Compliance manager"),
     "CSA": pack("Finance, administration, logistics & IT admin", "Empathy, active listening, coaching & emotional support", "Design studios, agencies & flexible creative spaces", "Corporate event coordinator, Travel agent, Conference planner", "Business, Math, Geography", "Corporate event coord, Hospitality", "Itinerary logistics, vendor contract auditing, travel expense logging", "Corporate travel lead, Trade show ops manager"),
     "CSE": pack("Finance, administration, logistics & IT admin", "Empathy, active listening, coaching & emotional support", "Fast-paced corporate offices, competitive arenas & boardrooms", "Executive assistant, Office manager, Customer service supervisor", "Business, IT, English", "Office mgt, Exec admin", "Exec calendar scheduling, CRM system auditing, support workflow", "Chief of staff, Corporate ops director")
+};
+
+// ==========================================
+// THÊM DATABASE PHÂN TÍCH CHUYÊN SÂU
+// ==========================================
+const deepAnalysisDatabase = {
+    "RIA": { salary: "Entry: $55K-$75K | Mid: $85K-$120K | Senior: $130K-$190K+", academic: "Bachelor's / Master's in Engineering. Proficiency in simulation software.", trend: "Strong growth (+8% to +15%) driven by Automation, EV, and MedTech.", aiRate: "Low (10% - 20%): AI assists design, but physical testing is irreplaceable", lifespan: "Long (30 - 40 years): Promotes to R&D Specialist or engineering manager." },
+    "RIC": { salary: "Entry: $35K-$50K | Mid: $55K-$85K | Senior: $90K-$120K", academic: "Associate Degree / Technical Certificate, CNC Programming, ISO Audit.", trend: "Moderate (+3% to +6%) shifting toward smart manufacturing.", aiRate: "High (50% - 65%): Basic CAD and manual QC are heavily automated", lifespan: "Moderate (25 - 35 years): Requires upskilling to transition to Production Management." },
+    "RIE": { salary: "Entry: $70K-$95K | Mid: $110K-$160K | Senior: $180K-$300K+", academic: "Bachelor's in Engineering / Construction + Project Management Certificate.", trend: "High growth (+10%) fueled by digital transformation and global infrastructure.", aiRate: "Very low (<10%): Demands strategic thinking, negotiation, and governance", lifespan: "Very long (35 - 45 years): Career peak is usually achieved after age 40." },
+    "RIS": { salary: "Entry: $45K-$60K | Mid: $65K-$95K | Senior: $100K-$140K", academic: "Bachelor's in Biomedical / Kinesiology / Orthotics + Clinical/Medical License.", trend: "Strong growth (+8% to +12%) due to the global aging population.", aiRate: "Low (15% - 25%): Combines engineering with clinical treatment", lifespan: "Long (30 - 40 years): Transitions to research or medical equipment consulting." },
+    "RAI": { salary: "Entry: $40K-$55K | Mid: $60K-$90K | Senior: $100K-$150K", academic: "Bachelor's in Industrial Design / Architecture or Specialized Certificate.", trend: "Stable (+4% to +7%) focusing on conservation and luxury segments.", aiRate: "Moderate (25% - 35%): AI generates ideas, but prototyping relies on craftsmanship", lifespan: "Long (30 - 40 years): Personal brand value increases significantly with experience." },
+    "RAC": { salary: "Entry: $30K-$45K | Mid: $50K-$75K | Senior: $80K-$110K", academic: "Associate Degree / Specialized Certificate (CAD, GIS, Theatrical Arts).", trend: "Slight decline to Flat (-2% to +3%) due to drafting automation.", aiRate: "Very high (60% - 75%): Standard technical drawings are easily replaced by AI", lifespan: "Short - Moderate (20 - 30 years): Mandatory upskilling required." },
+    "RAE": { salary: "Entry: $35K-$60K | Mid: $70K-$120K | Senior: $150K-$300K+", academic: "Bachelor's in Design / Architecture / Landscaping + Business Management skills.", trend: "Cyclical growth; steady increase in demand for high-end personalization.", aiRate: "Low (15% - 25%): Relies entirely on client relationships and site supervision", lifespan: "Very long (30 - 45 years): Business expansion or transition to consulting." },
+    "RAS": { salary: "Entry: $45K-$60K | Mid: $65K-$90K | Senior: $100K-$135K", academic: "Master's in Art Therapy or Bachelor's in Medical Design / Sculpture.", trend: "Solid growth (+7% to +10%) driven by mental health and physical inclusivity.", aiRate: "Very low (<15%): Requires emotional intelligence, empathy, and personalized sculpting", lifespan: "Long (30 - 40 years): Accumulation of reputation and medical prestige." },
+    "RCI": { salary: "Entry: $40K-$55K | Mid: $60K-$90K | Senior: $100K-$135K", academic: "Bachelor's in Surveying / Civil Engineering / Urban Law + Inspector License.", trend: "Stable (+4% to +7%) tied closely to infrastructure development.", aiRate: "Moderate (30% - 40%): Drones/AI assist measurement, but legal status requires humans", lifespan: "Long (30 - 40 years): Shift from fieldwork to legal consulting and senior auditing." },
+    "RCA": { salary: "Entry: $35K-$48K | Mid: $55K-$80K | Senior: $85K-$115K", academic: "Associate / Bachelor's in Technical Graphics, Technical Communication, or Architecture.", trend: "Decline (-5% to 0%) due to Generative AI creating automated images.", aiRate: "Very high (65% - 80%): Demand for 2D/3D documentation personnel is shrinking", lifespan: "Moderate (20 - 25 years): Requires pivoting to UX or AR/VR design." },
+    "RCE": { salary: "Entry: $50K-$70K | Mid: $80K-$120K | Senior: $130K-$180K+", academic: "Bachelor's in Supply Chain Management / Industrial Engineering.", trend: "High growth (+8% to +12%) due to global supply chain complexities.", aiRate: "Low - Moderate (20% - 30%): AI optimizes algorithms, humans manage crises", lifespan: "Long (30 - 40 years): Advancement to Chief Operating Officer (COO) or Director." },
+    "RCS": { salary: "Entry: $45K-$60K | Mid: $65K-$95K | Senior: $105K-$145K", academic: "Bachelor's in Occupational Safety, Public Health, Ergonomics.", trend: "Steady growth (+5% to +8%) due to strict labor safety regulations.", aiRate: "Low (15% - 25%): Requires physical site assessment and policy negotiation", lifespan: "Long (30 - 40 years): Practical experience and legal knowledge sustain career." },
+    "REI": { salary: "Entry: $50K-$70K | Mid: $85K-$130K | Senior: $140K-$220K+", academic: "Bachelor's in Engineering / Construction Economics / Technical Commerce.", trend: "Strong growth (+7% to +11%); complex industrial equipment requires consultation.", aiRate: "Moderate (25% - 35%): Estimation is AI-assisted, but deal negotiation needs humans", lifespan: "Long (30 - 40 years): Income and status rise sharply with client networks." },
+    "REA": { salary: "Entry: $40K-$55K | Mid: $65K-$100K | Senior: $110K-$170K+", academic: "Bachelor's in Construction Management / Landscaping or valid Contractor License.", trend: "Steady growth (+5% to +8%) alongside urbanization and the entertainment industry.", aiRate: "Very low (<15%): Physical on-site work requiring direct labor coordination", lifespan: "Moderate - Long (25 - 35 years): Shift from field labor to general contracting." },
+    "REC": { salary: "Entry: $70K-$90K | Mid: $110K-$160K | Senior: $170K-$250K+", academic: "Bachelor's in Logistics / Business Administration / Engineering.", trend: "High growth (+9% to +13%), crucial in the global production chain.", aiRate: "Very low (<15%): Strategic large-scale operations and handling supply chain disruptions", lifespan: "Very long (35 - 45 years): Senior strategic management roles have exceptional durability." },
+    "RES": { salary: "Entry: $45K-$60K | Mid: $65K-$95K | Senior: $100K-$140K", academic: "Degree in Labor Relations / Vocational Education or Journeyman tradesman.", trend: "Stable (+3% to +6%); skilled labor shortages drive demand for vocational training.", aiRate: "Very low (<10%): Relies entirely on human negotiation and skill transmission", lifespan: "Long (30 - 40 years): Often the later career stage for highly skilled tradespeople." },
+    "RSI": { salary: "Entry: $60K-$75K | Mid: $85K-$115K | Senior: $125K-$165K", academic: "Doctor of Physical Therapy (DPT) or Master's in Sports Medicine + License.", trend: "Very high growth (+12% to +17%) due to holistic healthcare demands.", aiRate: "Very low (<10%): Manual biomechanical diagnosis and direct physical treatment", lifespan: "Long (30 - 40 years): Opportunities for private practice or consulting." },
+    "RSA": { salary: "Entry: $40K-$55K | Mid: $58K-$85K | Senior: $90K-$125K", academic: "Degree in Special Education / Vocational Teaching Certificate.", trend: "Stable (+4% to +6%); focus on inclusive education and practical skill training.", aiRate: "Very low (<10%): Transmitting fine motor skills and craftsmanship cannot be automated", lifespan: "Long (30 - 40 years): Sustainable lifespan, benefiting from public education." },
+    "RSC": { salary: "Entry: $35K-$48K | Mid: $50K-$72K | Senior: $75K-$100K", academic: "Associate / Bachelor's in Public Health, Social Work, or Occupational Health.", trend: "Solid growth (+6% to +9%) tied to social welfare policies.", aiRate: "Low (15% - 20%): Requires psychological assessment and human interaction", lifespan: "Long (25 - 35 years): Advance to safety program management or rehab consulting." },
+    "RSE": { salary: "Entry: $45K-$60K | Mid: $70K-$105K | Senior: $115K-$160K", academic: "Fire/Rescue Command Certifications, Bachelor's in Crisis Management.", trend: "Stable growth (+5% to +8%); natural disasters increase demand.", aiRate: "Very low (<10%): Harsh environments demand immediate physical response", lifespan: "Moderate (20 - 30 years field): Later transitions to tactical command." },
+    "IRA": { salary: "Entry: $45K-$60K | Mid: $70K-$95K | Senior: $100K-$140K", academic: "Bachelor's / Master's in Archaeology, Materials Science, or Geology.", trend: "Stable (+4% to +7%) driven by green energy/mining and construction tech.", aiRate: "Low - Moderate (20% - 30%): Fieldwork and physical testing remain manual.", lifespan: "Long (30 - 40 years): Transitions from rigorous fieldwork to research and consulting." },
+    "IRC": { salary: "Entry: $40K-$55K | Mid: $60K-$80K | Senior: $85K-$115K", academic: "Associate / Bachelor's in Environmental Science or Geology.", trend: "Moderate growth (+5% to +8%) due to global ESG regulations.", aiRate: "Moderate (30% - 40%): Data processing automated; physical sampling requires humans", lifespan: "Moderate - Long (25 - 35 years): Physical demands necessitate shifting to desk auditing." },
+    "IRE": { salary: "Entry: $65K-$85K | Mid: $90K-$130K | Senior: $140K-$180K+", academic: "Master's / Ph.D. + Project Management or Lab Management Certifications.", trend: "Steady (+6%) driven by the need for experienced oversight in complex research.", aiRate: "Low (10% - 20%): Management, logistical coordination, and strategic leadership", lifespan: "Long (30 - 40 years): Administrative and directorial roles have high sustainability." },
+    "IRS": { salary: "Entry: $55K-$75K | Mid: $85K-$125K | Senior: $135K-$180K+", academic: "DVM (Veterinary), Master's / Ph.D. in Biology/Kinesiology + Clinical Licenses.", trend: "High growth (+9% to +12%) due to the pet care boom and conservation efforts.", aiRate: "Very low (<15%): Highly physical, surgical, and relies on biological interaction", lifespan: "Long (30 - 40 years): May pivot to private practice or wildlife consulting." },
+    "IAR": { salary: "Entry: $45K-$60K | Mid: $65K-$90K | Senior: $95K-$130K", academic: "Bachelor's in Scientific Illustration, GIS, or Forensic Sciences.", trend: "Flat to Slight Decline (0% to +3%) as AI image generation impacts illustration.", aiRate: "High (60% - 75%): AI Generative tools replace manual drafting", lifespan: "Moderate (20 - 30 years): Must aggressively adapt to AR/VR and 3D tools." },
+    "IAC": { salary: "Entry: $55K-$75K | Mid: $85K-$120K | Senior: $130K-$170K", academic: "Bachelor's / Master's in HCI, Data Science, or specialized scientific fields.", trend: "Solid growth (+8% to +11%) driven by the need to translate complex data.", aiRate: "Moderate (40% - 50%): AI assists editing/coding, but UX empathy remains vital", lifespan: "Moderate (25 - 30 years): Rapid technological shifts require constant upskilling." },
+    "IAE": { salary: "Entry: $85K-$110K | Mid: $130K-$170K | Senior: $180K-$250K+", academic: "Master's / Ph.D. in Computer Science or STEM. Extensive domain expertise.", trend: "High growth (+10% to +15%); tech architecture and deep R&D remain at a premium.", aiRate: "Low - Moderate (20% - 30%): AI writes boilerplate, but high-level architecture requires human logic", lifespan: "Long (30 - 35 years): Value increases exponentially with systems-level experience." },
+    "IAS": { salary: "Entry: $50K-$65K | Mid: $75K-$105K | Senior: $115K-$150K", academic: "Master's / Ph.D. in Anthropology, Psychology, or Social Sciences.", trend: "Stable (+5% to +7%) with demand in UX, academia, and mental health sectors.", aiRate: "Very low (<15%): Requires deep human empathy, cultural understanding, and nuance", lifespan: "Long (30 - 40 years): Often transitions into tenured academia or private practice." },
+    "ICR": { salary: "Entry: $45K-$60K | Mid: $65K-$85K | Senior: $90K-$120K", academic: "Bachelor's in Forensics, Chemistry, or Environmental Sciences + QA Certs.", trend: "Stable (+6% to +8%) as strict regulatory environments mandate legal compliance.", aiRate: "Moderate (35% - 45%): AI aids analysis, but legal/QA sign-offs require human accountability", lifespan: "Long (30 - 35 years): A highly stable, regulatory-driven career track." },
+    "ICA": { salary: "Entry: $65K-$85K | Mid: $95K-$135K | Senior: $145K-$190K", academic: "Master's in Statistics, Bioinformatics, or Computer Science.", trend: "Very High growth (+15% to +20%) fueled by big data and the genomics boom.", aiRate: "Moderate (40% - 50%): AI runs models, humans design experimental parameters", lifespan: "Moderate (25 - 35 years): High burnout rate; transitions to management or architecture." },
+    "ICE": { salary: "Entry: $75K-$95K | Mid: $120K-$170K | Senior: $180K-$300K+", academic: "Bachelor's / Master's in Math/Finance/IT + Rigorous Certifications.", trend: "High growth (+10% to +14%) as cybersecurity and financial risk management are critical.", aiRate: "Moderate (30% - 40%): AI calculates risk; humans make strategic and legal determinations", lifespan: "Long (35 - 40 years): Highly secure professions defended by strict professional exams." },
+    "ICS": { salary: "Entry: $55K-$70K | Mid: $80K-$110K | Senior: $120K-$160K", academic: "Master's in Public Health (MPH) or Life Sciences + Clinical Certifications.", trend: "Strong growth (+7% to +10%) due to biotech advancements.", aiRate: "Moderate (35% - 45%): AI mines records, but humans oversee trial ethics and strategy", lifespan: "Long (30 - 35 years): Pathways lead to regulatory affairs or global health policy." },
+    "IER": { salary: "Entry: $75K-$95K | Mid: $115K-$160K | Senior: $170K-$240K+", academic: "Bachelor's / Master's in specialized Engineering/Sciences + PMP.", trend: "Steady (+6% to +9%) driven by space tech, biotech, and resource exploration.", aiRate: "Low (15% - 20%): High-stakes, complex operations management in physical environments", lifespan: "Long (30 - 40 years): Peak earnings occur later due to accumulated industry trust." },
+    "IEA": { salary: "Entry: $110K-$140K | Mid: $160K-$220K | Senior: $250K-$400K+", academic: "Ph.D. or Master's in STEM + MBA or extensive executive track record.", trend: "High growth (+8% to +12%) as companies compete aggressively on tech innovation.", aiRate: "Very low (<10%): Executive vision, strategy, and cross-functional human leadership", lifespan: "Long (35 - 45 years): Executive roles possess immense staying power and corporate influence." },
+    "IEC": { salary: "Entry: $85K-$110K | Mid: $140K-$200K | Senior: $220K-$350K+", academic: "Master's / Ph.D. in Quantitative fields, Law, or Finance + Executive credentials.", trend: "High growth (+10% to +15%); data governance and AI compliance are top priorities.", aiRate: "Low (15% - 25%): Strategy, governance, and legal compliance require strict accountability", lifespan: "Long (30 - 40 years): C-suite and director levels are highly resilient to automation." },
+    "IES": { salary: "Entry: $80K-$110K | Mid: $130K-$180K | Senior: $200K-$300K+", academic: "Ph.D. or MD with significant published research and academic tenure.", trend: "Stable (+4% to +6%); traditional academic and research institutions have low turnover.", aiRate: "Very low (<10%): Institutional politics, fundraising, and human leadership", lifespan: "Very long (35 - 45 years): Often serves as the capstone to a distinguished academic career." },
+    "ISR": { salary: "Entry: $70K-$100K | Mid: $130K-$200K | Senior: $250K-$350K+", academic: "MD (Neurology), Ph.D. / Master's in Biomechanics/Epidemiology + Medical Licenses.", trend: "Strong growth (+9% to +12%) due to aging populations and sports science advancements.", aiRate: "Low (15% - 25%): AI aids diagnostics, but patient interaction and physical assessment are crucial", lifespan: "Long (30 - 40 years): High barriers to entry ensure long-term job security and high compensation." },
+    "ISA": { salary: "Entry: $55K-$75K | Mid: $80K-$110K | Senior: $120K-$160K", academic: "Master's / Ph.D. in Education, Psychology, or Clinical Sciences.", trend: "Solid growth (+7% to +10%) aligned with EdTech and personalized learning expansion.", aiRate: "Moderate (30% - 40%): AI drafts content; humans apply psychological nuance and validity", lifespan: "Long (30 - 35 years): Often transitions to educational consulting or policy drafting." },
+    "ISC": { salary: "Entry: $50K-$65K | Mid: $75K-$100K | Senior: $110K-$140K", academic: "Bachelor's / Master's in Clinical Lab Science, Public Health + ASCP certs.", trend: "High growth (+11% to +14%) driven by preventative medicine and rapid diagnostics.", aiRate: "Moderate - High (45% - 55%): Automated testing replaces manual lab work; humans verify results", lifespan: "Moderate (25 - 30 years): Requires shifting to lab management to avoid automation." },
+    "ISE": { salary: "Entry: $85K-$120K | Mid: $150K-$220K | Senior: $250K-$400K+", academic: "MHA, MBA, MD (for CMO) or Ph.D. in Health Policy.", trend: "High growth (+10% to +13%); complex healthcare systems demand elite management.", aiRate: "Very low (<10%): Healthcare strategy, policy negotiation, and crisis leadership cannot be automated", lifespan: "Long (35 - 45 years): Executive healthcare roles are highly lucrative and extremely stable." },
+    "ARI": { salary: "Entry: $45K-$65K | Mid: $75K-$100K | Senior: $110K-$150K", academic: "Bachelor's in Animation / Audio Engineering / Film + Strong Demo Reel.", trend: "Flat to Decline (-2% to +3%) as AI tools rapidly speed up asset generation.", aiRate: "High (60% - 75%): Generative AI heavily automates modeling, rendering, and sound mixing", lifespan: "Moderate (20 - 30 years): High burnout; must pivot to Art Direction or Technical Directing (TD)." },
+    "ARC": { salary: "Entry: $35K-$50K | Mid: $55K-$75K | Senior: $85K-$120K", academic: "BFA in Fine Arts / Fashion or extensive Apprenticeship/Trade skills.", trend: "Stable (+3% to +5%) driven by a renaissance in bespoke and handmade luxury goods.", aiRate: "Very low (<15%): Physical craftsmanship, tactile materials, and bespoke fitting", lifespan: "Long (35 - 45 years): Skills and brand value appreciate significantly with age." },
+    "ARE": { salary: "Entry: $40K-$60K | Mid: $70K-$100K | Senior: $120K-$180K+", academic: "Bachelor's in Architecture / Film / Industrial Design + Robust Client Portfolio.", trend: "Steady growth (+5% to +8%) as personal branding and custom design demand rises.", aiRate: "Low - Moderate (25% - 35%): AI aids ideation/editing, but execution and negotiation are human", lifespan: "Long (30 - 40 years): Highly scalable into founding independent agencies." },
+    "ARS": { salary: "Entry: $35K-$50K | Mid: $55K-$80K | Senior: $90K-$130K", academic: "BFA / Culinary Degree + Extensive industry experience and pedagogical skills.", trend: "Solid growth (+6% to +9%) driven by the experiential economy and live arts education.", aiRate: "Very low (<10%): Physical presence, kinesthetic correction, and real-time artistic direction", lifespan: "Long (35 - 40 years): Transitions smoothly from active performer to lifetime educator." },
+    "AIR": { salary: "Entry: $55K-$75K | Mid: $85K-$115K | Senior: $130K-$170K", academic: "Bachelor's / Master's in Industrial Design, Architecture, or Human Factors (Ergonomics).", trend: "High growth (+8% to +11%) due to the blending of physical hardware and digital tech.", aiRate: "Moderate (30% - 40%): AI drafts concepts; humans solve physical spatial and biomechanical constraints", lifespan: "Long (30 - 35 years): High job security due to the necessity of physical prototyping." },
+    "AIC": { salary: "Entry: $55K-$75K | Mid: $85K-$120K | Senior: $130K-$180K", academic: "Bachelor's in CS, HCI, or Graphic Design.", trend: "High growth (+10% to +13%) as global digital transformation continues.", aiRate: "Moderate - High (45% - 55%): Coding and basic UI are automated; UX psychology remains human", lifespan: "Moderate (25 - 30 years): Requires constant upskilling to avoid technological obsolescence." },
+    "AIE": { salary: "Entry: $70K-$90K | Mid: $110K-$150K | Senior: $170K-$250K+", academic: "Bachelor's / Master's in Marketing, Communications, or Design + Leadership experience.", trend: "Steady (+6% to +8%) as brands fight for attention in a saturated AI-content market.", aiRate: "Low (15% - 25%): Human psychology, cultural nuance, and strategic vision cannot be automated", lifespan: "Long (30 - 40 years): Moves into CMO or executive board positions." },
+    "AIS": { salary: "Entry: $45K-$60K | Mid: $70K-$95K | Senior: $110K-$150K", academic: "Bachelor's / Master's in Journalism, Film, or STEM fields.", trend: "Flat (0% to +4%) due to media consolidation, though premium investigative work survives.", aiRate: "Low - Moderate (20% - 30%): AI synthesizes existing data; humans conduct physical interviews", lifespan: "Long (30 - 40 years): Reputation, sources, and credibility build immense late-career value." },
+    "ACR": { salary: "Entry: $30K-$45K | Mid: $50K-$70K | Senior: $80K-$110K", academic: "BFA in Graphic Arts or self-taught mastery via portfolio.", trend: "Decline (-5% to 0%) as commercial typography is heavily digitized and automated.", aiRate: "Very High (70% - 85%): Digital fonts, layout generation, and commercial calligraphy are automated", lifespan: "Short - Moderate (15 - 25 years): Must pivot into fine arts or bespoke luxury commissions." },
+    "ACI": { salary: "Entry: $50K-$65K | Mid: $75K-$100K | Senior: $115K-$150K", academic: "Bachelor's / Master's in Design, Museum Studies, or Information Science.", trend: "Moderate growth (+5% to +7%) focused on organizing the explosion of digital/physical art.", aiRate: "Moderate (30% - 45%): AI categorizes data; humans curate the cultural and emotional narrative", lifespan: "Long (30 - 35 years): Curatorial roles are highly esteemed and stable in academia/institutions." },
+    "ACE": { salary: "Entry: $55K-$75K | Mid: $85K-$120K | Senior: $140K-$200K", academic: "Bachelor's / Master's in Media, Journalism, or Communications.", trend: "Slight Decline to Flat (-2% to +3%) due to AI content generation.", aiRate: "Moderate (40% - 50%): Copyediting and scheduling are automated; editorial direction is human", lifespan: "Moderate - Long (25 - 35 years): Leadership roles survive, while mid-level tasks shrink." },
+    "ACS": { salary: "Entry: $35K-$50K | Mid: $55K-$80K | Senior: $90K-$130K+", academic: "Hospitality/Design Degree or specialized Event Planning Certifications.", trend: "Solid growth (+6% to +9%) as clients seek highly curated, in-person experiences.", aiRate: "Very low (<10%): Requires physical staging, crisis management, and emotional client support", lifespan: "Long (30 - 40 years): High burnout in early years, but transitions to lucrative luxury consulting." },
+    "AER": { salary: "Entry: $45K-$65K | Mid: $75K-$120K | Senior: $150K-$250K+", academic: "BFA / MFA in Theater/Fashion, or organic industry rise through networking.", trend: "Stable (+4% to +6%) driven by high-end fashion and live entertainment sectors.", aiRate: "Low (15% - 20%): Spatial staging, fabric manipulation, and brand storytelling remain physical", lifespan: "Long (35 - 45 years): Brand equity and industry clout ensure longevity." },
+    "AEI": { salary: "Entry: $80K-$100K | Mid: $120K-$170K | Senior: $200K-$300K+", academic: "Bachelor's in Business/Design + deep integration with emerging technologies.", trend: "High growth (+10% to +14%); the intersection of tech and creative strategy is booming.", aiRate: "Low (10% - 20%): These professionals actively use AI to scale businesses, they are not replaced by it", lifespan: "Long (30 - 40 years): Highly adaptable entrepreneurs who dictate industry shifts." },
+    "AEC": { salary: "Entry: $60K-$80K | Mid: $95K-$140K | Senior: $160K-$250K+", academic: "Bachelor's / Master's in Film, Arts Administration, or Business.", trend: "Moderate growth (+5% to +8%) as the global art market and streaming platforms stabilize.", aiRate: "Low (10% - 15%): Relies on human networking, financing, contract negotiation, and art sales", lifespan: "Very long (35 - 45 years): Connections and capital accumulation compound over a lifetime." },
+    "AES": { salary: "Entry: $20K-$45K | Mid: $60K-$100K | Senior: $150K-$1M+", academic: "BFA / Conservatory training, or innate charisma and natural talent.", trend: "Stable (+4% to +6%) with a massive shift toward live touring and personal branding.", aiRate: "Low - Moderate (20% - 30%): AI voices threaten background work; star power is immune", lifespan: "Variable (10 - 50 years): Can be fleeting or last a lifetime depending on public relevance." },
+    "ASR": { salary: "Entry: $40K-$55K | Mid: $65K-$90K | Senior: $100K-$140K", academic: "Master's in Therapy/Psychology or State-Licensed Massage/Somatic Certifications.", trend: "High growth (+10% to +13%) as mental health and physical wellness become cultural priorities.", aiRate: "Very low (<5%): Complete reliance on physical touch, kinesthetic empathy, and somatic feedback", lifespan: "Long (30 - 40 years): Highly sustainable due to the necessity of human connection." },
+    "ASI": { salary: "Entry: $55K-$75K | Mid: $80K-$115K | Senior: $130K-$180K", academic: "Master's / Ph.D. in Sociology, Counseling, or Humanities + Clinical Licenses.", trend: "Steady growth (+7% to +9%) as societal complexities increase demand for counseling.", aiRate: "Low (15% - 20%): AI synthesizes text, but therapeutic alliance requires humans", lifespan: "Long (35 - 45 years): Tenure and clinical reputation provide supreme late-career stability." },
+    "ASC": { salary: "Entry: $40K-$55K | Mid: $60K-$85K | Senior: $95K-$130K", academic: "Bachelor's / Master's in Arts Administration, Music Education, or Public Policy.", trend: "Stable (+4% to +6%) driven by municipal funding and community enrichment programs.", aiRate: "Low (10% - 20%): Managing community dynamics, live acoustics, and local politics", lifespan: "Long (30 - 40 years): Often transition into civic leadership or foundation management." },
+    "ASE": { salary: "Entry: $45K-$60K | Mid: $70K-$110K | Senior: $130K-$200K+", academic: "Bachelor's / Master's in Business, Arts Administration, or Law.", trend: "Moderate growth (+5% to +8%) as talent navigation in a saturated digital world becomes harder.", aiRate: "Low (10% - 15%): Built entirely on human relationships, negotiation, and identifying potential", lifespan: "Long (35 - 45 years): Industry veterans hold the most power and job security." },
+    "SRI": { salary: "Entry: $45K-$60K | Mid: $70K-$95K | Senior: $100K-$115K", academic: "Associate Degree + Mandatory Clinical Licensure (ARRT, RDH, PTA).", trend: "High growth (+9% to +15%) driven by an aging population and preventative care.", aiRate: "Low (10% - 20%): Requires precise physical manipulation and patient positioning", lifespan: "Long (30 - 35 years): Stable, but physical demands may prompt moves into clinic management." },
+    "SRA": { salary: "Entry: $30K-$45K | Mid: $50K-$75K | Senior: $85K-$110K", academic: "Bachelor's in Kinesiology/Education or Specialized Certifications.", trend: "Strong growth (+6% to +10%) fueled by the wellness and outdoor recreation boom.", aiRate: "Very low (<10%): Physical bodily instruction, human motivation, and outdoor survival", lifespan: "Long (30 - 40 years): Often transitions from physical leadership to facility ownership." },
+    "SRC": { salary: "Entry: $45K-$60K | Mid: $75K-$95K | Senior: $110K-$140K", academic: "ASN/BSN (Nursing), Associate / Cert in EMT-P or Surgical Tech + Licensure.", trend: "Very High growth (+10% to +15%) due to chronic global shortages in acute care.", aiRate: "Very low (<10%): High-stakes physical intervention, crisis response, and sterile field management", lifespan: "Moderate - Long (25 - 35 years): High burnout rate; often pivot to administration." },
+    "SRE": { salary: "Entry: $50K-$70K | Mid: $85K-$120K | Senior: $130K-$160K", academic: "Bachelor's / Master's in Emergency Management / Fire Science + Field Experience.", trend: "Stable (+5% to +8%) as climate-related emergencies increase demand for leadership.", aiRate: "Very low (<10%): Extreme physical conditions, rapid triage, and human leadership", lifespan: "Long (30 - 40 years): Field experience directly dictates promotion to executive command." },
+    "SIR": { salary: "Entry: $70K-$95K | Mid: $110K-$140K | Senior: $150K-$200K+", academic: "Master's Degree (PA-C, RD) or MD/DO + Strict Medical Licensure.", trend: "Very High growth (+15% to +28% for PAs) as they fill crucial gaps in healthcare access.", aiRate: "Low - Moderate (20% - 30%): AI aids diagnosis, but humans build patient trust", lifespan: "Long (30 - 40 years): Highly lucrative and respected clinical careers." },
+    "SIA": { salary: "Entry: $60K-$80K | Mid: $90K-$115K | Senior: $125K-$160K", academic: "Master's / Ph.D. in Psychology, Speech-Language Pathology (SLP), or Education.", trend: "Strong growth (+8% to +11%) driven by mental health awareness and special education needs.", aiRate: "Moderate (25% - 35%): Curriculum generation is AI-assisted, but therapy requires human empathy", lifespan: "Long (35 - 40 years): Tenure tracks and clinical practices offer extreme stability." },
+    "SIC": { salary: "Entry: $45K-$70K | Mid: $90K-$135K | Senior: $150K-$170K", academic: "Pharm.D for Pharmacists; Associate/Bachelor's for Health Info Management (HIM).", trend: "Flat to Slight Growth (+2% to +5%); pharmacy is saturated, records are digitized.", aiRate: "High (50% - 65%): Dispensing automation and AI medical coding drastically reduce human labor", lifespan: "Moderate (25 - 35 years): Requires pivot to clinical management or trial strategy." },
+    "SIE": { salary: "Entry: $85K-$110K | Mid: $130K-$180K | Senior: $200K-$350K+", academic: "Master's (MPH, MHA, MBA) or Ph.D./MD + Executive Healthcare Experience.", trend: "High growth (+10% to +14%) driven by health policy and hospital system optimization.", aiRate: "Low (15% - 20%): Navigating institutional politics, high-level strategy, and public health crises", lifespan: "Long (35 - 45 years): C-suite and directorship roles are highly insulated from automation." },
+    "SAR": { salary: "Entry: $30K-$45K | Mid: $55K-$75K | Senior: $85K-$110K", academic: "Bachelor's + MT-BC for Therapy; State License for Cosmetology/Teaching.", trend: "Stable (+5% to +8%) supported by the personal care economy and holistic arts.", aiRate: "Very low (<10%): Requires tactile feedback, physical grooming, and emotional resonance", lifespan: "Long (30 - 40 years): Client loyalty and private practice ownership ensure longevity." },
+    "SAI": { salary: "Entry: $45K-$60K | Mid: $70K-$95K | Senior: $110K-$150K", academic: "Master's / Ph.D. in Counseling, Theology, or Philosophy + State Licensure.", trend: "Strong growth (+10% to +14%) addressing the global mental health crisis.", aiRate: "Very low (<15%): Requires deep emotional intelligence, ethical judgment, and existential reasoning", lifespan: "Very Long (35 - 45 years): Wisdom and life experience compound professional value over time." },
+    "SAC": { salary: "Entry: $55K-$75K | Mid: $85K-$110K | Senior: $120K-$150K", academic: "Master's in EdTech, Special Education, or Curriculum Design.", trend: "High growth (+7% to +10%) driven by corporate e-learning and inclusive education.", aiRate: "Moderate (35% - 45%): AI drafts materials; humans ensure pedagogical strategy and accessibility", lifespan: "Long (30 - 40 years): Often transition to EdTech leadership or school district administration." },
+    "SAE": { salary: "Entry: $40K-$60K | Mid: $75K-$100K | Senior: $120K-$180K+", academic: "Bachelor's in PR / Communications, or a strong grassroots organizing track record.", trend: "Stable (+5% to +8%) as corporate ESG and social impact initiatives expand.", aiRate: "Low (15% - 25%): Success depends entirely on networking, fundraising, and storytelling", lifespan: "Long (30 - 40 years): Impact scales with the size of the professional's philanthropic network." },
+    "SCR": { salary: "Entry: $30K-$40K | Mid: $45K-$55K | Senior: $60K-$70K", academic: "High School Diploma / Certificate + On-the-job clinical training.", trend: "High growth (+7% to +11%) due to high turnover and aging population demands.", aiRate: "Moderate - High (40% - 60%): Clerk roles highly automated; physical aides protected by physical tasks", lifespan: "Short - Moderate (15 - 25 years): Primarily a stepping stone to higher nursing or PT credentials." },
+    "SCI": { salary: "Entry: $45K-$55K | Mid: $65K-$85K | Senior: $95K-$115K", academic: "Master's in School Counseling, Higher Ed Administration, or Psychology.", trend: "Stable (+4% to +7%) as student wellness and career navigation become priorities.", aiRate: "Moderate (35% - 45%): Aid processing is automated; crisis counseling and life coaching remain human", lifespan: "Long (30 - 35 years): Stable roles within public education and university systems." },
+    "SCA": { salary: "Entry: $45K-$60K | Mid: $70K-$90K | Senior: $100K-$130K", academic: "Master's (MLS for Librarian, Urban Planning) or specialized Event Certifications.", trend: "Stable (+3% to +6%) focusing on community spaces, urban logistics, and structured events.", aiRate: "Moderate (30% - 40%): AI organizes logistics; humans manage community relations and physical staging", lifespan: "Long (30 - 40 years): Civic and municipal roles offer high job security and pensions." },
+    "SCE": { salary: "Entry: $70K-$90K | Mid: $110K-$140K | Senior: $160K-$220K", academic: "Master's in Human Resources, Educational Leadership, or MBA.", trend: "Strong growth (+6% to +9%) as managing workforce transitions and school ops is critical.", aiRate: "Low (15% - 25%): Dispute resolution, cultural leadership, and human judgment are irreplaceable", lifespan: "Long (30 - 40 years): Executive leadership in HR and education provides lifetime career tracks." },
+    "SER": { salary: "Entry: $65K-$85K | Mid: $100K-$130K | Senior: $140K-$180K", academic: "Law Enforcement Academy / Military background + Bachelor's / Master's Degree.", trend: "Stable (+4% to +6%) with a shift toward specialized, tactical crisis response.", aiRate: "Very low (<10%): Requires physical bravery, rapid field decision-making, and tactical oversight", lifespan: "Moderate (20 - 30 years): Physical/mental toll often leads to early retirement or desk administration." },
+    "SEI": { salary: "Entry: $60K-$80K | Mid: $95K-$130K | Senior: $150K-$200K+", academic: "Master's / Ph.D. in Public Policy, Public Health, or Economics.", trend: "High growth (+8% to +12%) navigating complex healthcare and social legislation.", aiRate: "Moderate (30% - 40%): AI models data and drafts briefs; humans negotiate policy and ethical implications", lifespan: "Long (35 - 45 years): Transition smoothly into political appointments or think-tank leadership." },
+    "SEA": { salary: "Entry: $40K-$60K | Mid: $80K-$120K | Senior: $150K-$300K+", academic: "Certifications (ICF for coaching) or subject matter expertise and extreme charisma.", trend: "Strong growth (+7% to +10%) fueled by the transition economy and corporate burnout.", aiRate: "Low (15% - 25%): Relies entirely on personal charisma, active listening, and human accountability", lifespan: "Long (30 - 40 years): Highly scalable; often a lucrative second career that builds with age." },
+    "SEC": { salary: "Entry: $50K-$70K | Mid: $85K-$110K | Senior: $130K-$160K", academic: "Master's in Social Work (MSW), Public Administration, or Communications.", trend: "Stable (+5% to +8%) crucial for non-profit survival and university endowments.", aiRate: "Low (20% - 25%): Built on human network building, donor psychology, and community empathy", lifespan: "Long (30 - 40 years): Relationships and institutional knowledge cement long-term job security." },
+    "ERI": { salary: "Entry: $65K-$90K | Mid: $100K-$150K | Senior: $160K-$300K+", academic: "Bachelor’s in Engineering, Business, Finance, or Real Estate. Industry certifications.", trend: "Moderate growth (+4% to +6%): Driven by infrastructure spending and technical integrations.", aiRate: "Low (15% - 25%): AI assists with lead generation, but closing relationships require human negotiation", lifespan: "Long (30 - 35 years): High reliance on long-term relationships and industry reputation." },
+    "ERA": { salary: "Entry: $75K-$110K | Mid: $130K-$180K | Senior: $200K-$400K+", academic: "Bachelor’s/Master’s in Architecture, Construction Management. Contractor licenses.", trend: "Steady growth (+5% to +8%): High demand in luxury markets and custom renovations.", aiRate: "Low (10% - 20%): Generative AI aids design, but physical execution and client trust are human-centric", lifespan: "Long (30 - 40 years): Experience, portfolio, and affluent networks compound over time." },
+    "ERC": { salary: "Entry: $70K-$95K | Mid: $100K-$140K | Senior: $150K-$220K+", academic: "Bachelor’s in Supply Chain, Logistics, or Civil Engineering. PMP/CSCP certifications.", trend: "Strong growth (+7% to +10%): Fueled by global e-commerce and complex infrastructure logistics.", aiRate: "Medium (30% - 40%): AI optimizes inventory, but humans manage handling physical supply chain disruptions", lifespan: "Medium to Long (25 - 35 years): Highly stressful but enduring due to the need for physical oversight." },
+    "ERS": { salary: "Entry: $55K-$80K | Mid: $85K-$120K | Senior: $130K-$250K+", academic: "Bachelor’s/Master’s in Public Administration, Sports Management, or Military Academy.", trend: "Stable (+3% to +5%): Steady government funding and consistent demand for administration.", aiRate: "Very Low (5% - 15%): Leadership, morale building, strategic human management cannot be automated", lifespan: "Long (25 - 40 years): Defined by steady career progression and strong pension/tenure systems." },
+    "EIR": { salary: "Entry: $100K-$130K | Mid: $140K-$180K | Senior: $200K-$350K+", academic: "Bachelor’s/Master’s in Engineering, IT, or MBA. Lean Six Sigma/ITIL certifications.", trend: "Strong growth (+8% to +11%): Essential for digital transformation and automated manufacturing.", aiRate: "Low (15% - 25%): Executive decision-making and change management remain human", lifespan: "Long (30 - 35 years): High value placed on cross-functional technical leadership and strategic execution." },
+    "EIA": { salary: "Entry: $90K-$140K | Mid: $150K-$250K | Senior: $300K-$1M+", academic: "MBA or Master’s in Finance/Economics from top-tier institutions.", trend: "Moderate growth (+5% to +8%): Continuous need for capital allocation and corporate restructuring.", aiRate: "Medium (30% - 45%): AI excels at market analysis, but networking and negotiation drive the final deals", lifespan: "Medium to Long (20 - 35 years): Intense early years, but senior roles offer high longevity and lucrative exits." },
+    "EIC": { salary: "Entry: $110K-$150K | Mid: $160K-$250K | Senior: $300K-$600K+", academic: "Master’s in Finance, Economics, or MBA. CPA, CFA certifications are highly preferred.", trend: "Steady growth (+6% to +8%): Vital for corporate financial health and macroeconomic forecasting.", aiRate: "Low to Medium (20% - 35%): AI handles predictive modeling, but C-suite strategy requires human oversight", lifespan: "Long (30 - 40 years): Financial stewardship requires decades of accumulated market wisdom and trust." },
+    "EIS": { salary: "Entry: $65K-$95K | Mid: $100K-$150K | Senior: $160K-$280K+", academic: "Master’s in Public Health, Education, Public Administration, or MBA.", trend: "Strong growth (+8% to +12%): Driven by healthcare expansion, educational reform, and global initiatives.", aiRate: "Low (10% - 20%): Mission-driven roles rely heavily on empathy, community building, and human-centric innovation", lifespan: "Long (30 - 40 years): Purpose-driven careers with high personal fulfillment and stability at the senior level." },
+    "EAR": { salary: "Entry: $50K-$85K | Mid: $90K-$150K | Senior: $180K-$400K+", academic: "Bachelor’s in Business, Fashion Merchandising, or Real Estate License.", trend: "Stable (+3% to +5%): Luxury markets remain resilient, dependent on personalized client experiences.", aiRate: "Medium (25% - 35%): AI aids inventory tracking, but luxury sales thrive on exclusivity and personal relationships", lifespan: "Medium to Long (25 - 35 years): Success is heavily tied to building a loyal, high-net-worth client base." },
+    "EAI": { salary: "Entry: $75K-$110K | Mid: $130K-$180K | Senior: $200K-$350K+", academic: "Bachelor’s/Master’s in Marketing, Communications, or Business Administration.", trend: "Steady growth (+5% to +8%): Critical for navigating fragmented digital landscapes and building brand equity.", aiRate: "Medium (35% - 45%): Generative AI automates content, but high-level creative direction remains human", lifespan: "Medium (20 - 30 years): High pressure to adapt to rapid cultural shifts and technological trends." },
+    "EAC": { salary: "Entry: $65K-$95K | Mid: $100K-$140K | Senior: $150K-$250K+", academic: "Bachelor’s in Marketing, Media, or Supply Chain (for production).", trend: "Moderate growth (+4% to +7%): Ongoing need to manage cross-platform media campaigns.", aiRate: "Medium (40% - 50%): AI streamlines planning, yet human oversight is needed for brand safety", lifespan: "Medium (20 - 30 years): Requires constant upskilling to integrate new production tools and media channels." },
+    "EAS": { salary: "Entry: $60K-$90K | Mid: $100K-$160K | Senior: $180K-$350K+", academic: "Bachelor’s/Master’s in Political Science, Communications, Law, or PR.", trend: "Stable (+3% to +5%): Constant need for crisis management, political representation, and brand building.", aiRate: "Very Low (5% - 15%): Public trust, charisma, interpersonal negotiation are entirely human domains", lifespan: "Long (30 - 40 years): Careers are built on long-term reputation, public standing, and deep industry connections." },
+    "ECR": { salary: "Entry: $60K-$90K | Mid: $95K-$130K | Senior: $140K-$220K+", academic: "Bachelor’s in Business Administration, Facility Management. CFM certifications.", trend: "Steady growth (+5% to +7%): Expansion of commercial franchises and the need to manage workspaces.", aiRate: "Low to Medium (20% - 30%): AI manages HVAC, but human leaders manage staff, safety, and physical operations", lifespan: "Long (30 - 35 years): Stable roles rooted in practical management and brick-and-mortar oversight." },
+    "ECI": { salary: "Entry: $100K-$160K | Mid: $180K-$300K | Senior: $400K-$1M+", academic: "Master’s in Finance, Accounting, Law, or MBA. CPA/CFA and FINRA licenses required.", trend: "Moderate growth (+4% to +6%): Heavy regulatory environments keep compliance and deal-makers in demand.", aiRate: "Medium to High (40% - 55%): AI automates due diligence, but closing deals and regulatory judgments remain human", lifespan: "Medium (20 - 30 years): High burnout rate in early years, but director levels enjoy long tenures." },
+    "ECA": { salary: "Entry: $55K-$80K | Mid: $85K-$125K | Senior: $140K-$200K+", academic: "Bachelor’s in Business, Retail Management, or Art History.", trend: "Stable (+2% to +4%): Physical retail requires strong experiential curation to compete with e-commerce.", aiRate: "Medium (30% - 45%): AI handles inventory, but aesthetic curation and VIP customer experiences require a human touch", lifespan: "Medium to Long (25 - 35 years): Reliant on aesthetic intuition, trend forecasting, and physical space management." },
+    "ECS": { salary: "Entry: $70K-$100K | Mid: $110K-$160K | Senior: $180K-$280K+", academic: "Bachelor’s/Master’s in HR, Hospitality Management, or Business. SHRM certifications.", trend: "Steady growth (+6% to +8%): High focus on employee retention, corporate culture, and premium guest experiences.", aiRate: "Low (15% - 25%): Conflict resolution, cultural leadership, and bespoke hospitality are strictly human", lifespan: "Long (30 - 35 years): High emotional intelligence requirements provide strong longevity and job security." },
+    "ESR": { salary: "Entry: $60K-$85K | Mid: $95K-$140K | Senior: $150K-$250K+", academic: "Bachelor’s in Sports Management, Construction Management, or extensive field/labor experience.", trend: "Steady growth (+4% to +7%): Infrastructure booms and labor movements drive demand for robust leadership.", aiRate: "Low (10% - 20%): Managing physical labor, negotiating contracts require pure human psychology", lifespan: "Long (30 - 40 years): Experience, grit, and established authority yield long-term respect and job retention." },
+    "ESI": { salary: "Entry: $75K-$105K | Mid: $120K-$160K | Senior: $180K-$270K+", academic: "Master’s/Ph.D. in Organizational Psychology, HR Management, or Law.", trend: "Strong growth (+7% to +9%): Companies are investing in mental health, restructuring, and top-tier talent retention.", aiRate: "Low (15% - 25%): AI filters resumes, but psychological assessment, negotiations, and cultural shaping are human tasks", lifespan: "Long (30 - 35 years): Deep expertise in human behavior and corporate law makes these roles highly resilient." },
+    "ESA": { salary: "Entry: $65K-$95K | Mid: $110K-$150K | Senior: $170K-$300K+", academic: "Bachelor’s/Master’s in Public Relations, Journalism, or Communications.", trend: "Steady growth (+5% to +8%): Essential for navigating cancel culture, corporate crises, and global media cycles.", aiRate: "Low to Medium (20% - 35%): AI drafts press releases, but live press interactions and crisis strategy require a human face", lifespan: "Long (25 - 35 years): Experienced communicators who can handle high-stress public scrutiny are highly valued." },
+    "ESC": { salary: "Entry: $65K-$90K | Mid: $100K-$150K | Senior: $160K-$250K+", academic: "Master’s in Public Administration (MPA), Public Policy, or Urban Planning.", trend: "Stable (+3% to +5%): Consistent need for managing municipal budgets, public services, and civic infrastructure.", aiRate: "Low (10% - 20%): AI aids urban data analysis, but policy execution and stakeholder negotiations are strictly human", lifespan: "Long (30 - 40 years): Highly stable government roles with strong benefits and long-term career trajectories." },
+    "CRI": { salary: "Entry: $50K-$70K | Mid: $75K-$105K | Senior: $110K-$160K+", academic: "High school diploma or Associate/Bachelor’s in Civil Engineering, Quality Management. Relevant licenses.", trend: "Moderate growth (+3% to +6%): Driven by stricter safety regulations and advanced manufacturing.", aiRate: "Low (15% - 25%): Physical site inspections and real-world factory environment audits require physical presence", lifespan: "Long (30 - 35 years): Practical expertise and regulatory authority build high long-term career stability." },
+    "CRA": { salary: "Entry: $40K-$60K | Mid: $65K-$90K | Senior: $95K-$135K+", academic: "High school diploma, Vocational Certificate, or Associate/Bachelor’s in Apparel Design, CAD/Drafting.", trend: "Slow to Moderate growth (+2% to +5%): Steady demand in custom fabrication and specialized space planning.", aiRate: "Medium (35% - 45%): 2D/3D CAD drafting is automated, though human spatial reasoning and physical fitting are resilient", lifespan: "Medium to Long (25 - 35 years): Transitioning into master patternmaking, senior CAD management prolongs longevity." },
+    "CRE": { salary: "Entry: $45K-$65K | Mid: $70K-$100K | Senior: $105K-$150K+", academic: "High school diploma or Associate/Bachelor’s in Supply Chain, Business, or Logistics.", trend: "Steady growth (+5% to +8%): Expansion in last-mile delivery, e-commerce fulfillment, and fleet management.", aiRate: "Medium (35% - 50%): Automated routing streamline tasks, but human intervention remains critical during emergencies", lifespan: "Medium (20 - 30 years): Operational stress and rapid shifts toward software-based fleet platforms demand adaptation." },
+    "CRS": { salary: "Entry: $55K-$75K | Mid: $80K-$115K | Senior: $125K-$190K+", academic: "Associate or Bachelor’s degree in Healthcare Administration, Facility Management, or Engineering.", trend: "Strong growth (+7% to +11%): Driven by aging populations and healthcare facility expansion.", aiRate: "Low (15% - 25%): AI optimizes scheduling, but physical building upkeep and triage support require human coordination", lifespan: "Long (30 - 35 years): Essential operational roles that rely heavily on situational problem-solving." },
+    "CIR": { salary: "Entry: $65K-$90K | Mid: $95K-$135K | Senior: $140K-$200K+", academic: "Bachelor’s in Computer Science, Cybersecurity, Information Technology, or Forensic Science.", trend: "Strong growth (+8% to +12%): Driven by escalating cyber threats, enterprise cloud infrastructure.", aiRate: "Low to Medium (20% - 30%): AI automates monitoring, but legal chain of custody and security response require human authority", lifespan: "Long (30 - 35 years): Continuous technical recertification ensures lasting relevance in high-demand technical infrastructure." },
+    "CIA": { salary: "Entry: $70K-$95K | Mid: $105K-$145K | Senior: $150K-$220K+", academic: "Bachelor’s or Master’s in Data Analytics, Computer Science, Library Science.", trend: "Very Strong growth (+10% to +15%): Organizations rely on historical data repositories and strategic visualization.", aiRate: "Medium (30% - 40%): AI generates reports quickly, but structuring business logic and historical context require humans", lifespan: "Long (25 - 35 years): Deep domain expertise in strategic enterprise data modeling builds enduring value." },
+    "CIE": { salary: "Entry: $65K-$88K | Mid: $92K-$130K | Senior: $135K-$190K+", academic: "Bachelor’s or Master’s in Accounting, Finance, or Risk Management. CPA, CIA certifications.", trend: "Steady growth (+5% to +8%): Increased financial regulations, ESG compliance, and fraud prevention.", aiRate: "Medium (35% - 45%): Automated anomaly detection streamline sampling, but ethical evaluation and risk tolerance remain human", lifespan: "Long (30 - 35 years): Senior auditors and risk advisors are integral to corporate governance and executive leadership." },
+    "CIS": { salary: "Entry: $50K-$70K | Mid: $75K-$110K | Senior: $115K-$165K+", academic: "Associate or Bachelor’s in Health Information Management (HIM), Healthcare Law, or Nursing.", trend: "Strong growth (+7% to +10%): Expansion of electronic health records (EHR) and strict HIPAA regulations.", aiRate: "Medium to High (40% - 55%): Autonomous medical coding software is advancing, but legal compliance requires human oversight", lifespan: "Medium to Long (25 - 30 years): Coders are shifting toward high-level compliance auditing and privacy management." },
+    "CAR": { salary: "Entry: $40K-$55K | Mid: $60K-$80K | Senior: $85K-$120K+", academic: "High school diploma, Associate degree, or Bachelor’s in Graphic Design, Print Communications.", trend: "Declining to Slow (-2% to +2%): Shift toward fully digital media reduces traditional prepress.", aiRate: "High (55% - 70%): Generative layout AI replace desktop publishing, though physical quality control persists", lifespan: "Short to Medium (15 - 25 years): Professionals must pivot toward digital asset management or UI/UX formatting." },
+    "CAI": { salary: "Entry: $75K-$110K | Mid: $115K-$160K | Senior: $165K-$250K+", academic: "Bachelor’s in CS/Engineering or Juris Doctor (J.D.) + Bar admission + LL.M. in Taxation.", trend: "Moderate growth (+4% to +8%): High demand for legal tax restructuring and complex cloud database architecture.", aiRate: "Medium (35% - 45%): LLMs write basic code, but complex legal arguments and tax loophole strategy require human precision", lifespan: "Long (30 - 35 years): Specialized legal and architectural knowledge creates sustained high-earning longevity." },
+    "CAE": { salary: "Entry: $55K-$78K | Mid: $82K-$120K | Senior: $125K-$180K+", academic: "Bachelor’s in Business, Advertising, Communications, or Intellectual Property/Paralegal studies.", trend: "Steady growth (+4% to +7%): Growth in global patent filings, trademark protection, and multi-channel campaigns.", aiRate: "Medium (30% - 40%): AI assists in patent searching, but client relationship management and legal IP evaluations require human oversight", lifespan: "Medium to Long (25 - 35 years): Strong focus on client advisory, agency leadership, or specialized IP administration." },
+    "CAS": { salary: "Entry: $45K-$65K | Mid: $68K-$95K | Senior: $100K-$145K+", academic: "Postsecondary certificate in Court Reporting/Stenography, Paralegal Studies, or Associate degree.", trend: "Stable to Moderate growth (+2% to +5%): Steady court proceedings and demand for verbatim real-time stenography.", aiRate: "Medium to High (40% - 50%): Speech-to-text AI automates preliminary transcription, but official court-certified reporting remain human-led", lifespan: "Medium to Long (25 - 30 years): Specialized legal knowledge provides solid stability within judicial and corporate systems." },
+    "CER": { salary: "Entry: $48K-$68K | Mid: $72K-$105K | Senior: $110K-$160K+", academic: "Associate or Bachelor’s in Supply Chain, International Trade, or Business. Customs Broker License required.", trend: "Strong growth (+6% to +9%) Driven by international trade regulations, tariff changes, and global supply chain.", aiRate: "Medium (30% - 40%): Automated filing platforms speed up documentation, but navigating international trade laws requires human brokers", lifespan: "Long (25 - 35 years): Specialized regulatory knowledge in trade compliance guarantees strong career protection." },
+    "CEI": { salary: "Entry: $75K-$100K | Mid: $105K-$150K | Senior: $155K-$250K+", academic: "Bachelor’s or Master’s in Accounting, Finance, or Treasury. CPA, CTP licenses preferred.", trend: "Steady growth (+5% to +8%): High demand for liquidity management, capital allocation, and corporate revenue protection.", aiRate: "Low to Medium (20% - 30%): AI handles ledger reconciliation, but capital strategy, dividend policies require human executives", lifespan: "Long (30 - 35 years): Critical C-suite track roles with high institutional trust and longevity." },
+    "CEA": { salary: "Entry: $42K-$60K | Mid: $62K-$90K | Senior: $95K-$140K+", academic: "Bachelor’s in English, Communications, Marketing, Library/Information Science, or Media Studies.", trend: "Moderate growth (+3% to +6%): Surge in enterprise digital content libraries and digital archiving.", aiRate: "High (45% - 60%): Programmatic ad buying and AI auto-tagging replace manual entry, though high-level editorial judgment remain human", lifespan: "Medium (20 - 30 years): Fast-moving industry requiring constant evolution into digital strategy or brand curation." },
+    "CES": { salary: "Entry: $50K-$70K | Mid: $75K-$105K | Senior: $110K-$160K+", academic: "Associate or Bachelor’s in Human Resources, Business Administration, or Finance.", trend: "Steady growth (+4% to +7%): Essential for handling complex labor tax laws, healthcare benefits, and remote operations.", aiRate: "Medium (35% - 45%): AI self-service portals streamline administrative tasks, but employee disputes and benefits negotiations require human HR managers", lifespan: "Long (25 - 35 years): Stable career path vital to core enterprise corporate functions." },
+    "CSR": { salary: "Entry: $38K-$52K | Mid: $55K-$75K | Senior: $80K-$110K+", academic: "High school diploma or Associate degree in Healthcare Administration, Medical Office Management.", trend: "Strong growth (+7% to +11%): Driven by expanding healthcare systems, outpatient clinics, and high patient volume.", aiRate: "Medium (30% - 40%): Automated kiosks handle routine tasks, but patient empathy and hospital ward coordination require human staff", lifespan: "Medium to Long (25 - 35 years): Strong interpersonal requirements provide resilience against full automation." },
+    "CSI": { salary: "Entry: $45K-$62K | Mid: $65K-$92K | Senior: $98K-$145K+", academic: "Bachelor’s or Master’s in Higher Education Administration, Educational Leadership, or Business Administration.", trend: "Slow to Moderate growth (+2% to +5%): Driven by university compliance, student financial aid distribution, and enrollment.", aiRate: "Medium (30% - 40%): Automated degree auditing streamline backend work, but student appeal evaluation and federal compliance remain human", lifespan: "Long (30 - 35 years): High institutional stability within public and private higher education systems." },
+    "CSA": { salary: "Entry: $45K-$62K | Mid: $65K-$95K | Senior: $100K-$155K+", academic: "Associate or Bachelor’s in Event Management, Hospitality, Communications, or Business. CMP certification preferred.", trend: "Moderate growth (+4% to +7%): Strong rebound and expansion of experiential corporate conferences, luxury group travel.", aiRate: "Medium (35% - 45%): AI travel generators replace basic agents, but complex multi-vendor event logistics and crisis response are strictly human", lifespan: "Medium (20 - 30 years): Relies heavily on vendor relationships, negotiation skills, and experiential management." },
+    "CSE": { salary: "Entry: $48K-$68K | Mid: $70K-$100K | Senior: $105K-$160K+", academic: "High school diploma, Associate or Bachelor’s degree in Business Administration, Communications, or Management.", trend: "Steady growth (+3% to +6%): High-level executive assistance and physical office coordination remain crucial for leadership teams.", aiRate: "Medium (30% - 40%): AI handles basic scheduling, but confidential executive gatekeeping and office culture management are human", lifespan: "Long (25 - 35 years): Senior EAs and office managers develop deep corporate institutional knowledge that makes them indispensable." }
 };
 
 const questionsData = {
@@ -175,7 +296,6 @@ const mainContentArea = document.getElementById('mainContentArea');
 
 function initPagination() {
     paginationContainer.innerHTML = '';
-    // CHỈ HIỂN THỊ 15 CHẤM KHÔNG THỂ BẤM 
     for (let i = 1; i <= 15; i++) {
         const dot = document.createElement('div');
         dot.classList.add('page-dot');
@@ -199,7 +319,6 @@ function initAnswerSelection() {
     });
 }
 
-// GIỮ NGUYÊN HOÀN TOÀN LOGIC CŨ CỦA BẠN ĐỂ LẤY ĐÁP ÁN (Dùng cho TH 15A, 14A 1B...)
 function getTiedLabels() {
     const scores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
     for (let i = 1; i <= 15; i++) {
@@ -211,19 +330,15 @@ function getTiedLabels() {
     
     let tied = new Set();
     
-    // Nếu có hòa ở vị trí thứ 1 và 2
     if (sorted[0][1] === sorted[1][1] && sorted[0][1] > 0) {
         sorted.filter(x => x[1] === sorted[0][1]).forEach(x => tied.add(x[0]));
     }
-    // Nếu có hòa ở vị trí thứ 2 và 3
     if (sorted[1][1] === sorted[2][1] && sorted[1][1] > 0) {
         sorted.filter(x => x[1] === sorted[1][1]).forEach(x => tied.add(x[0]));
     }
-    // Nếu có hòa ở vị trí thứ 3 và 4 (tranh chấp chiếc vé cuối vào Top 3)
     if (sorted[2][1] === sorted[3][1] && sorted[2][1] > 0) {
         sorted.filter(x => x[1] === sorted[2][1]).forEach(x => tied.add(x[0]));
     }
-    // Trường hợp đặc biệt: Không đủ tạo bộ 3 (VD 15A hoặc 14A 1B)
     if (sorted[2][1] === 0) {
         sorted.filter(x => x[1] === 0).forEach(x => tied.add(x[0]));
     }
@@ -231,7 +346,6 @@ function getTiedLabels() {
     return Array.from(tied);
 }
 
-// KIỂM TRA XEM CÓ CẦN THI ĐẤU PHỤ KHÔNG (Giữ nguyên)
 function checkIfNeedsTieBreaker() {
     return getTiedLabels().length > 0;
 }
@@ -244,10 +358,8 @@ function updateContent(slideNumber) {
         let tiedLabels = [];
         
         if (slideNumber >= 16) {
-            // Lấy theo logic gốc trước
             tiedLabels = getTiedLabels(); 
             
-            // TÍNH ĐIỂM ĐỂ BẮT 2 TRƯỜNG HỢP NGOẠI LỆ 
             const scores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
             for (let i = 1; i <= 15; i++) {
                 if (userSelections[i] !== undefined) scores[answerLabels[userSelections[i]]]++;
@@ -274,21 +386,17 @@ function updateContent(slideNumber) {
             const ans16 = userSelections[16] !== undefined ? answerLabels[userSelections[16]] : null;
             const ans17 = userSelections[17] !== undefined ? answerLabels[userSelections[17]] : null;
 
-            // TRƯỜNG HỢP NGOẠI LỆ 1: a b lớn nhất bằng nhau và c d e nhỏ nhất bằng nhau (vd 6 6 1 1 1)
             if (G1.length === 2 && G2.length >= 2) {
                 if (slideNumber === 16) tiedLabels = G1;
                 else if (slideNumber === 17) tiedLabels = G2;
-                // Slide 18 sẽ được xử lý ở logic gốc bên dưới
             }
-            // TRƯỜNG HỢP NGOẠI LỆ 2: 3 cái lớn nhất bằng nhau (vd 3a 3b 3c 3d 3e)
             else if (G1.length >= 3) {
                 if (slideNumber === 16) tiedLabels = G1;
                 else if (slideNumber === 17) tiedLabels = G1.filter(x => x !== ans16);
                 else if (slideNumber === 18) tiedLabels = G1.filter(x => x !== ans16 && x !== ans17);
             }
 
-            // LOGIC CÂU 18 GỐC BẠN VIẾT (Áp dụng cho 15A, 14A 1B... và TH ngoại lệ 1)
-            if (slideNumber === 18 && !(G1.length >= 3)) { // Bỏ qua nếu đã xử lý ở TH2
+            if (slideNumber === 18 && !(G1.length >= 3)) { 
                 if (ans16 && ans17) {
                     if (ans16 !== ans17) {
                         tiedLabels = [ans16, ans17]; 
@@ -303,15 +411,22 @@ function updateContent(slideNumber) {
             questionText.innerHTML = qData.question;
             const cards = answersGrid.querySelectorAll('.answer-card');
             
+            // Tạo mảng thứ tự ngẫu nhiên để đảo vị trí các đáp án trên giao diện
+            const randomOrders = Array.from({length: cards.length}, (_, i) => i).sort(() => Math.random() - 0.5);
+            
             cards.forEach((card, index) => {
                 card.classList.remove('active', 'disabled-card');
+                
+                // Gán CSS order để đảo vị trí (yêu cầu container answersGrid dùng display: flex hoặc grid)
+                card.style.order = randomOrders[index];
 
                 if (qData.answers[index]) {
-                    card.textContent = qData.answers[index];
+                    // Dùng Regex xóa các ký tự "A. ", "b. ", "c. "... ở đầu chuỗi đáp án
+                    const cleanText = qData.answers[index].replace(/^[a-fA-F]\.\s*/, '');
+                    card.textContent = cleanText;
                     card.style.display = 'block';
 
                     const currentLabel = answerLabels[index];
-                    // Chỉ bật sáng đáp án nằm trong danh sách được duyệt
                     if (slideNumber >= 16 && !tiedLabels.includes(currentLabel)) {
                         card.classList.add('disabled-card');
                     }
@@ -326,7 +441,6 @@ function updateContent(slideNumber) {
             }
         }
 
-        // ĐỔI TEXT NÚT NEXT THÀNH FINISH TẠI CÂU CHỐT
         if (slideNumber === 15 || slideNumber === 18) {
             nextBtn.innerHTML = "Finish";
             nextBtn.style.backgroundColor = "#FDE8B1"; 
@@ -334,7 +448,6 @@ function updateContent(slideNumber) {
             nextBtn.innerHTML = "Next &nbsp;&rarr;";
         }
 
-        // ĐIỀU CHỈNH GIAO DIỆN (NÚT BẤM)
         const paginationWrapper = document.querySelector('.pagination-wrapper');
         const bottomControls = document.getElementById('bottomControls');
         
@@ -344,14 +457,13 @@ function updateContent(slideNumber) {
             nextBtn.style.display = 'block';
             bottomControls.style.display = 'none';
         } else {
-            // Câu 16-18: Chuyển Next/Finish xuống dưới góc phải
             document.getElementById('pagination').style.display = 'none';
             bottomControls.style.display = 'flex';
             bottomControls.appendChild(nextBtn); 
             nextBtn.style.display = 'block';
             
             if (slideNumber === 18) {
-                nextBtn.style.marginLeft = 'auto'; // Ép nút sang sát phải
+                nextBtn.style.marginLeft = 'auto'; 
             }
         }
         
@@ -374,50 +486,41 @@ function goToSlide(slideNumber) {
     updateContent(currentSlide);
 }
 
-// XỬ LÝ CHUNG BẰNG MỘT NÚT NEXT DUY NHẤT
 nextBtn.addEventListener('click', () => {
-    // 1. BẮT BUỘC CHỌN ĐÁP ÁN ĐỂ ĐI TIẾP
     if (userSelections[currentSlide] === undefined) {
         return;
     }
 
-    // 2. KHI NHẤN "FINISH" Ở CÂU 15
     if (currentSlide === 15) {
         if (checkIfNeedsTieBreaker()) {
-            goToSlide(16); // Có hòa (hoặc thiếu) -> Bật Bonus
+            goToSlide(16); 
         } else {
-            renderFinalResult(); // Bộ 3 đã rõ ràng -> Chốt kết quả ngay
+            renderFinalResult(); 
         }
         return;
     }
 
-    // 3. KHI NHẤN "FINISH" Ở CÂU 18
     if (currentSlide === 18) {
         renderFinalResult();
         return;
     }
 
-    // 4. CHUYỂN CÂU TIẾP THEO BÌNH THƯỜNG
     goToSlide(currentSlide + 1);
 });
 
-// TÍNH ĐIỂM VÀ TÌM MÃ HOLLAND CODE
 function renderFinalResult() {
     const scores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
     
-    // Tính 15 câu chính
     for (let i = 1; i <= 15; i++) {
         if (userSelections[i] !== undefined) scores[answerLabels[userSelections[i]]]++;
     }
 
-    // CỘNG ĐIỂM 3 CÂU BONUS (CHUẨN HỆ SỐ MỚI)
     if (userSelections[16] !== undefined) scores[answerLabels[userSelections[16]]] += 0.3;
     if (userSelections[17] !== undefined) scores[answerLabels[userSelections[17]]] += 0.2;
     if (userSelections[18] !== undefined) scores[answerLabels[userSelections[18]]] += 0.15;
 
     const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
     
-    // Tự động rút gọn lấy 3 đáp án cao nhất
     let finalCode = "";
     if (sortedScores[2][1] > 0) {
         finalCode = sortedScores[0][0] + sortedScores[1][0] + sortedScores[2][0];
@@ -430,10 +533,14 @@ function renderFinalResult() {
     renderResultPage(finalCode);
 }
 
-// HIỂN THỊ KẾT QUẢ
+// CẬP NHẬT HÀM RENDER ĐỂ HIỂN THỊ DEEPER ANALYSIS
 function renderResultPage(code) {
     const info = resultsDatabase[code] || {
         fields: "Data not available", tools: "N/A", environment: "N/A", careers: "N/A", subjects: "N/A", major: "N/A", skills: "N/A", planB: "N/A"
+    };
+
+    const deepInfo = deepAnalysisDatabase[code] || {
+        salary: "Updating...", academic: "Updating...", trend: "Updating...", aiRate: "Updating...", lifespan: "Updating..."
     };
 
     mainContentArea.innerHTML = `
@@ -478,6 +585,31 @@ function renderResultPage(code) {
                 </div>
             </div>
 
+            <!-- PHẦN MỚI: PHÂN TÍCH CHUYÊN SÂU -->
+            <h2 class="result-title-sub">Deeper Career Analysis</h2>
+            <div class="deep-analysis-grid">
+                <div class="da-box">
+                    <h4>Global Salary</h4>
+                    <p>${deepInfo.salary}</p>
+                </div>
+                <div class="da-box">
+                    <h4>Academic Requirements</h4>
+                    <p>${deepInfo.academic}</p>
+                </div>
+                <div class="da-box">
+                    <h4>Hiring Trend</h4>
+                    <p>${deepInfo.trend}</p>
+                </div>
+                <div class="da-box">
+                    <h4>AI Replacement Rate</h4>
+                    <p>${deepInfo.aiRate}</p>
+                </div>
+                <div class="da-box">
+                    <h4>Career Lifespan</h4>
+                    <p>${deepInfo.lifespan}</p>
+                </div>
+            </div>
+
             <div class="res-nav-buttons">
                 <a href="/home" class="home-btn">&larr;&nbsp;Home</a>
                 <a href="#" class="home-btn" onclick="startMiniJob('${code[0]}'); return false;">Start mini job probation now!!&nbsp;&rarr;</a>
@@ -492,14 +624,19 @@ function renderResultPage(code) {
     if(document.getElementById('bottomControls')) document.getElementById('bottomControls').style.display = 'none';
 }
 
-// HIỂN THỊ MINI JOB
 function startMiniJob(primaryGroup) {
     const data = miniJobData[primaryGroup];
     if (!data) return;
 
     let optionsHtml = '';
-    data.options.forEach((opt) => {
-        optionsHtml += `<div class="mj-answer-card" onclick="handleMiniJobAnswer(${opt.correct})">${opt.text}</div>`;
+    
+    // Tạo bản sao của mảng options và đảo vị trí ngẫu nhiên
+    const shuffledOptions = [...data.options].sort(() => Math.random() - 0.5);
+
+    shuffledOptions.forEach((opt) => {
+        // Tự động xóa các ký tự "A. ", "b. ", "c. "... ở đầu chuỗi
+        const cleanText = opt.text.replace(/^[a-fA-F]\.\s*/, '');
+        optionsHtml += `<div class="mj-answer-card" onclick="handleMiniJobAnswer(${opt.correct})">${cleanText}</div>`;
     });
 
     mainContentArea.innerHTML = `
@@ -517,7 +654,6 @@ function startMiniJob(primaryGroup) {
     `;
 }
 
-// KẾT QUẢ MINI JOB
 function handleMiniJobAnswer(isCorrect) {
     if (isCorrect) {
         mainContentArea.innerHTML = `
@@ -544,7 +680,6 @@ function handleMiniJobAnswer(isCorrect) {
     }
 }
 
-// Khởi tạo
 initPagination();
 initAnswerSelection();
 updateContent(1);

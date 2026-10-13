@@ -105,7 +105,6 @@ body, html {
     transform: scale(1.05);
 }
 
-/* STYLE CHO MENU HAMBURGER (ẨN TRÊN MÁY TÍNH) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -219,42 +218,6 @@ body, html {
 }
 
 .nav-action-btn:hover {
-    transform: scale(1.05);
-}
-
-.finish-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.finish-btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    border-radius: 20px;
-    padding: 8px 30px;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.finish-btn.disabled {
-    background-color: #557080;
-    color: #a0b8c8;
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.finish-btn.active-finish {
-    background-color: #FDE8B1;
-    color: #255D80;
-    opacity: 1;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.finish-btn.active-finish:hover {
     transform: scale(1.05);
 }
 
@@ -532,151 +495,48 @@ body, html {
    10. RESPONSIVE (MEDIA QUERIES)
 ========================================= */
 
-/* ----- Màn hình < 1440px ----- */
 @media screen and (max-width: 1439px) {
-    .wrapper, .navbar {
-        width: 100%;
-    }
-    
-    .navbar {
-        padding: 15px 30px;
-    }
-
-    .left-home-btn {
-        left: 20px;
-    }
-
-    .mj-header-row .home-btn {
-        left: 20px;
-    }
+    .wrapper, .navbar { width: 100%; }
+    .navbar { padding: 15px 30px; }
+    .left-home-btn, .mj-header-row .home-btn { left: 20px; }
 }
 
-/* ----- Màn hình < 1200px ----- */
 @media screen and (max-width: 1199px) {
     .content-area, .result-wrapper, .mini-job-container {
         padding-left: 20px;
         padding-right: 20px;
     }
-
-    .result-wrapper {
-        overflow-x: auto;
-    }
-
-    .result-grid-header, .result-grid-body {
-        min-width: 900px; 
-    }
+    .result-wrapper { overflow-x: auto; }
+    .result-grid-header, .result-grid-body { min-width: 900px; }
+    
+    .deep-analysis-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }
 
-/* ----- Màn hình < 1024px (Tablet ngang) ----- */
 @media screen and (max-width: 1023px) {
-    .quiz-header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .left-home-btn {
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none;
-        align-self: flex-start;
-    }
-
-    .home-btn:hover {
-        transform: scale(1.05);
-    }
-
-    .mj-header-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .mj-header-row .home-btn {
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none;
-        align-self: flex-start;
-    }
-
-    .pagination {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
+    .quiz-header { flex-direction: column; gap: 20px; }
+    .left-home-btn { position: relative; left: 0; top: 0; transform: none; align-self: flex-start; }
+    .home-btn:hover { transform: scale(1.05); }
+    .mj-header-row { flex-direction: column; gap: 15px; }
+    .mj-header-row .home-btn { position: relative; left: 0; top: 0; transform: none; align-self: flex-start; }
+    .pagination { flex-wrap: wrap; justify-content: center; }
+    .nav-links { gap: 15px; }
 }
 
-/* ----- Màn hình < 768px (Tablet dọc & Mobile to) ----- */
 @media screen and (max-width: 767px) {
-    /* Navbar & Menu trượt */
-    .navbar {
-        padding: 15px 25px; 
-    }
-
-    .menu-toggle {
-        display: flex; 
-    }
-
+    .navbar { padding: 15px 25px; }
+    .menu-toggle { display: flex; }
     .nav-links {
-        position: absolute;
-        top: 74px; 
-        left: -100%; 
-        width: 100%;
+        position: absolute; top: 74px; left: -100%; width: 100%;
         background: linear-gradient(180deg, #255D80 0%, #1a4a6b 100%);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        transition: left 0.3s ease-in-out;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-        gap: 20px;
+        flex-direction: column; align-items: center; padding: 20px 0;
+        transition: left 0.3s ease-in-out; box-shadow: 0 10px 15px rgba(0,0,0,0.2); gap: 20px;
     }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    /* Ép HOME và NEXT thẳng hàng ngang tuyệt đối */
-    .quiz-header {
-        display: flex;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important; 
-        width: 100%;
-    }
-
-    .left-home-btn {
-        position: relative !important; 
-        left: 0 !important;
-        top: 0 !important;
-        transform: none !important;
-        margin: 0 !important;
-        display: inline-flex;
-        align-items: center;
-        height: 35px; 
-    }
-
-    .nav-action-btn {
-        margin: 0 !important;
-        display: inline-flex;
-        align-items: center;
-        height: 35px; 
-    }
-
-    .pagination-wrapper {
-        width: auto !important;
-        margin: 0 !important;
-        justify-content: flex-end; 
-    }
-
-    /* Ẩn triệt để dấu chấm bằng important */
-    .pagination {
-        display: none !important; 
-    }
-
-    /* Các thành phần giao diện khác */
+    .nav-links.active { left: 0; }
+    .quiz-header { display: flex; flex-direction: row !important; justify-content: space-between !important; align-items: center !important; width: 100%; }
+    .left-home-btn { position: relative !important; left: 0 !important; top: 0 !important; transform: none !important; margin: 0 !important; display: inline-flex; align-items: center; height: 35px; }
+    .nav-action-btn { margin: 0 !important; display: inline-flex; align-items: center; height: 35px; }
+    .pagination-wrapper { width: auto !important; margin: 0 !important; justify-content: flex-end; }
+    .pagination { display: none !important; }
     .answers-grid { grid-template-columns: 1fr; }
     .question-box { font-size: 22px; padding: 20px 25px; }
     .result-title-main { font-size: 35px; }
@@ -684,41 +544,69 @@ body, html {
     .mj-result-box { font-size: 20px; padding: 25px; margin: 30px auto; }
     .mj-prompt-pill { font-size: 14px; }
     .answer-card, .mj-answer-card { padding: 15px 20px; }
+    
+    .deep-analysis-grid { grid-template-columns: 1fr !important; }
+    .result-title-sub { font-size: 30px !important; margin: 30px 0 20px 0 !important; padding-top: 30px !important; }
 }
 
-/* ----- Màn hình < 480px (Mobile nhỏ) ----- */
 @media screen and (max-width: 479px) {
-    .wrapper {
-        padding-top: 100px;
-    }
+    .wrapper { padding-top: 100px; }
+    .navbar { flex-direction: row; height: 74.844px; gap: 0; }
+    .logo { font-size: 20px; }
+    .question-box { font-size: 18px; }
+    .answer-card, .mj-answer-card { font-size: 13px; }
+    .result-title-main { font-size: 28px; }
+    .mj-situation { font-size: 14px; }
+}
 
-    .navbar {
-        flex-direction: row; 
-        height: 74.844px;
-        gap: 0;
-    }
+/* =========================================
+   11. GIAO DIỆN DEEPER ANALYSIS (PHÂN TÍCH SÂU)
+========================================= */
+.result-title-sub {
+    font-family: "SVN-Million Dreams", sans-serif;
+    font-size: 38px;
+    text-align: center;
+    color: #F9BDB3;
+    margin: 50px 0 25px 0;
+    border-top: 1px dashed rgba(249, 189, 179, 0.4);
+    padding-top: 40px;
+}
 
-    .logo {
-        font-size: 20px;
-    }
+.deep-analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
 
-    .question-box {
-        font-size: 18px;
-    }
+.da-box {
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.60) 0%, #255D80 100%);
+    border-radius: 10px;
+    padding: 25px 15px;
+    text-align: left; /* Đổi thành căn lề trái */
+    color: #FDE8B1;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
 
-    .answer-card, .mj-answer-card {
-        font-size: 13px;
-    }
+.da-box:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(180deg, rgba(37, 93, 128, 0.80) 0%, #2e719b 100%);
+}
 
-    .result-title-main {
-        font-size: 28px;
-    }
+.da-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F9BDB3;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-    .finish-btn {
-        width: 100%; 
-    }
-
-    .mj-situation {
-        font-size: 14px;
-    }
+.da-box p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left; /* Căn lề trái cho đoạn văn */
 }
